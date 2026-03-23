@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Coverage Matters — Barkman Financial Group</title>
+<meta name="description" content="Real scenarios showing why having the right insurance coverage at the right time makes all the difference for your family's financial future.">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.why-hero {
+  min-height: 80vh; display: flex; align-items: center;
+  background:
+    linear-gradient(115deg, rgba(10,8,5,0.97) 0%, rgba(10,8,5,0.88) 55%, rgba(10,8,5,0.3) 100%),
+    url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1800&q=80&fit=crop') center/cover;
+  padding: calc(var(--nav-h) + 80px) 80px 100px;
+  position: relative; overflow: hidden;
+}
+.why-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 70%, rgba(201,168,76,0.08) 0%, transparent 50%);
+}
+.why-hero-content { position: relative; z-index: 1; max-width: 700px; }
+.why-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(50px, 6vw, 84px);
+  font-weight: 600; line-height: 1.05;
+  color: var(--text-light); margin: 16px 0 24px;
+}
+.why-hero h1 em { font-style: italic; color: var(--gold-lt); display: block; }
+.why-hero p {
+  font-size: 18px; line-height: 1.8;
+  color: var(--text-dim); font-weight: 300; max-width: 540px; margin-bottom: 36px;
+}
+
+/* Reality check strip */
+.reality-strip {
+  background: var(--forest-mid);
+  padding: 60px 80px;
+  border-top: 1px solid rgba(201,168,76,0.12);
+}
+.reality-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  background: rgba(201,168,76,0.08);
+}
+.reality-stat {
+  background: var(--forest-lt); padding: 36px 28px;
+  text-align: center;
+}
+.reality-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 700;
+  color: var(--gold); line-height: 1; display: block;
+}
+.reality-sub {
+  font-size: 13px; color: var(--text-dim);
+  font-weight: 300; margin-top: 8px; line-height: 1.5;
+}
+
+/* Scenarios */
+.scenarios-section {
+  padding: 120px 80px;
+  background: var(--warm-white);
+}
+.scenarios-inner { max-width: 1200px; margin: 0 auto; }
+.scenarios-header { text-align: center; margin-bottom: 80px; }
+
+.scenario-card {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; margin-bottom: 4px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: box-shadow .4s;
+}
+.scenario-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+.scenario-card.reversed { direction: rtl; }
+.scenario-card.reversed > * { direction: ltr; }
+
+.scenario-visual {
+  position: relative; min-height: 360px;
+  overflow: hidden;
+}
+.scenario-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 6s ease;
+}
+.scenario-card:hover .scenario-visual img { transform: scale(1.05); }
+.scenario-visual-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(16,14,10,0.6) 0%, transparent 60%);
+}
+.scenario-tag {
+  position: absolute; top: 24px; left: 24px;
+  background: rgba(201,168,76,0.9);
+  color: var(--forest);
+  font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+  font-weight: 700; padding: 6px 14px;
+}
+
+.scenario-content {
+  padding: 52px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.scenario-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  color: var(--dark); margin-bottom: 6px;
+}
+.scenario-sub {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 500; margin-bottom: 24px;
+}
+.scenario-story {
+  font-size: 16px; line-height: 1.88;
+  color: var(--text-muted); font-weight: 300; margin-bottom: 28px;
+}
+.scenario-outcome {
+  padding: 20px 24px;
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+}
+.scenario-outcome-label {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 6px;
+}
+.scenario-outcome-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-style: italic;
+  color: var(--dark); line-height: 1.5;
+}
+
+/* Urgency section */
+.urgency-section {
+  background: var(--forest);
+  padding: 100px 80px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.urgency-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+}
+.urgency-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.urgency-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 600; color: var(--text-light); margin-bottom: 24px;
+  line-height: 1.15;
+}
+.urgency-inner h2 em { font-style: italic; color: var(--gold-lt); }
+.urgency-inner p {
+  color: var(--text-dim); font-size: 17px; font-weight: 300;
+  line-height: 1.85; margin-bottom: 20px;
+}
+.urgency-points {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  text-align: left; margin: 40px 0;
+}
+.urgency-point {
+  background: var(--forest-lt); padding: 24px 28px;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+.urgency-point-title {
+  font-weight: 600; font-size: 14px; color: var(--gold);
+  margin-bottom: 8px; letter-spacing: 0.5px;
+}
+.urgency-point-body {
+  font-size: 13px; color: var(--text-dim);
+  font-weight: 300; line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .why-hero { padding: calc(var(--nav-h) + 40px) 28px 80px; }
+  .reality-strip { padding: 60px 28px; }
+  .reality-inner { grid-template-columns: 1fr 1fr; }
+  .scenarios-section, .urgency-section { padding: 80px 28px; }
+  .scenario-card, .scenario-card.reversed { direction: ltr; grid-template-columns: 1fr; }
+  .urgency-points { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<script src="js/layout.js"></script>
+
+<section class="why-hero">
+  <div class="why-hero-content">
+    <div class="section-label">Real Situations. Real Consequences.</div>
+    <h1>Why coverage<br><em>matters now</em></h1>
+    <p>Insurance isn't about being pessimistic. It's about being responsible. These are real scenarios that play out every day — and the difference between having coverage and not can be life-changing.</p>
+    <a href="contact.html" class="btn btn-primary btn-arrow">Get Covered Today</a>
+  </div>
+</section>
+
+<div class="reality-strip">
+  <div class="reality-inner">
+    <div class="reality-stat reveal">
+      <span class="reality-big">$11,000</span>
+      <span class="reality-sub">Average cost of a funeral in the U.S. — paid out of pocket without coverage</span>
+    </div>
+    <div class="reality-stat reveal delay-1">
+      <span class="reality-big">66%</span>
+      <span class="reality-sub">of U.S. bankruptcies are linked to medical expenses — often from gaps in coverage</span>
+    </div>
+    <div class="reality-stat reveal delay-2">
+      <span class="reality-big">40%</span>
+      <span class="reality-sub">of Americans over 65 have no supplemental coverage to bridge Medicare gaps</span>
+    </div>
+    <div class="reality-stat reveal delay-3">
+      <span class="reality-big">$0</span>
+      <span class="reality-sub">Left for families with no life insurance when the unexpected happens</span>
+    </div>
+  </div>
+</div>
+
+<section class="scenarios-section">
+  <div class="scenarios-inner">
+    <div class="scenarios-header">
+      <div class="section-label reveal">Real Scenarios</div>
+      <h2 class="section-title reveal delay-1">These situations happen<br>every <em>single day</em></h2>
+    </div>
+
+    <div class="scenario-card reveal">
+      <div class="scenario-visual">
+        <img src="https://images.unsplash.com/photo-1510077143771-1b6a8c8f0571?w=800&q=80&fit=crop" alt="Medicare scenario">
+        <div class="scenario-visual-overlay"></div>
+        <div class="scenario-tag">Medicare</div>
+      </div>
+      <div class="scenario-content">
+        <div class="scenario-name">Robert, 68</div>
+        <div class="scenario-sub">Retired · Medicare beneficiary</div>
+        <p class="scenario-story">Robert enrolled in Medicare Part A and B when he turned 65 — but no one told him those alone don't cover everything. After a brief hospital stay and outpatient surgery, he received $4,200 in bills Medicare didn't cover. He didn't know Medigap plans exist to cover exactly these gaps.</p>
+        <div class="scenario-outcome">
+          <div class="scenario-outcome-label">The difference coverage makes</div>
+          <div class="scenario-outcome-text">With a Medicare Supplement plan, Robert's out-of-pocket cost would have been $0. A plan would have cost him $115/month — far less than one unexpected bill.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario-card reversed reveal">
+      <div class="scenario-visual">
+        <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=800&q=80&fit=crop&crop=faces" alt="Life insurance scenario">
+        <div class="scenario-visual-overlay"></div>
+        <div class="scenario-tag">Term Life</div>
+      </div>
+      <div class="scenario-content">
+        <div class="scenario-name">Kevin, 52</div>
+        <div class="scenario-sub">Father of two · Business owner</div>
+        <p class="scenario-story">Kevin kept meaning to get life insurance but thought he was too young to worry about it. When he passed unexpectedly from a heart attack, his wife was left with a mortgage, two kids in school, and no financial safety net. What would have cost him $40/month became an insurmountable gap.</p>
+        <div class="scenario-outcome">
+          <div class="scenario-outcome-label">The difference coverage makes</div>
+          <div class="scenario-outcome-text">A $500,000 20-year term policy would have cost Kevin approximately $40/month — and would have given his family the runway to rebuild their lives without financial crisis.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario-card reveal">
+      <div class="scenario-visual">
+        <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800&q=80&fit=crop&crop=faces" alt="Final expense scenario">
+        <div class="scenario-visual-overlay"></div>
+        <div class="scenario-tag">Final Expense</div>
+      </div>
+      <div class="scenario-content">
+        <div class="scenario-name">Dorothy, 74</div>
+        <div class="scenario-sub">Retired · Grandmother of five</div>
+        <p class="scenario-story">Dorothy always said she didn't want to be a burden to her family. But when she passed, her daughter was forced to take out a personal loan to cover funeral costs, cremation, and the reception — over $9,500 in total. The grief was hard enough without the financial stress layered on top.</p>
+        <div class="scenario-outcome">
+          <div class="scenario-outcome-label">The difference coverage makes</div>
+          <div class="scenario-outcome-text">A $15,000 final expense policy would have cost Dorothy approximately $42/month — and her family would have received the full benefit within days of her passing, with zero financial burden.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="urgency-section">
+  <div class="urgency-inner">
+    <div class="section-label reveal" style="justify-content:center;">The Hard Truth</div>
+    <h2 class="reveal delay-1">The best time to get coverage<br>was yesterday. The second best<br>time is <em>today.</em></h2>
+    <p class="reveal delay-2">Every day you wait, coverage becomes either harder to qualify for or more expensive. Health changes. Age increases premiums. Waiting costs money — and sometimes costs everything.</p>
+
+    <div class="urgency-points reveal delay-2">
+      <div class="urgency-point">
+        <div class="urgency-point-title">Age affects your rate</div>
+        <div class="urgency-point-body">Life insurance premiums increase approximately 8–10% for every year you wait. A policy at 55 costs significantly less than the same policy at 62.</div>
+      </div>
+      <div class="urgency-point">
+        <div class="urgency-point-title">Health changes lock you out</div>
+        <div class="urgency-point-body">A new diagnosis can make you uninsurable for many plans. Applying while you're healthy gives you the most options at the best prices.</div>
+      </div>
+      <div class="urgency-point">
+        <div class="urgency-point-title">Medicare windows are strict</div>
+        <div class="urgency-point-body">Miss your Medicare enrollment window and you face lifetime premium penalties. There are specific dates you must know.</div>
+      </div>
+      <div class="urgency-point">
+        <div class="urgency-point-title">Your family can't wait</div>
+        <div class="urgency-point-body">Coverage only works if it's in place before something happens. The people who need it most are the ones who waited.</div>
+      </div>
+    </div>
+
+    <a href="contact.html" class="btn btn-primary btn-arrow reveal" style="padding:18px 48px;font-size:13px;">Get Covered — It's Free to Start</a>
+  </div>
+</section>
+
+<script src="js/shared.js"></script>
+</body>
+</html>

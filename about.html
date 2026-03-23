@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Barkman Financial Group</title>
+<meta name="description" content="Meet the Barkman Financial Group team. Independent insurance guidance built on trust, experience, and a genuine commitment to your wellbeing.">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.about-hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  background:
+    linear-gradient(115deg, rgba(16,14,10,0.97) 0%, rgba(16,14,10,0.85) 50%, rgba(16,14,10,0.4) 100%),
+    url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1800&q=80&fit=crop') center/cover no-repeat;
+  padding: calc(var(--nav-h) + 80px) 80px 100px;
+  position: relative; overflow: hidden;
+}
+.about-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 60%, rgba(201,168,76,0.08) 0%, transparent 55%);
+}
+.about-hero-content { position: relative; z-index: 1; max-width: 680px; }
+.about-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 600; line-height: 1.05;
+  color: var(--text-light);
+  margin: 16px 0 24px;
+}
+.about-hero h1 em { font-style: italic; color: var(--gold-lt); display: block; }
+.about-hero p {
+  font-size: 18px; line-height: 1.8;
+  color: rgba(240,232,213,0.65); font-weight: 300; max-width: 520px;
+}
+
+.about-story {
+  padding: 120px 80px;
+  background: var(--warm-white);
+}
+.about-story-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 100px; align-items: center;
+}
+.story-img {
+  position: relative; height: 560px;
+}
+.story-img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.story-img-accent {
+  position: absolute; bottom: -28px; right: -28px;
+  width: 200px; height: 200px;
+  background: var(--forest);
+  border: 1px solid rgba(201,168,76,0.2);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+  z-index: 1;
+}
+.story-img-accent .big-stat {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 700;
+  color: var(--gold); line-height: 1;
+}
+.story-img-accent span {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--text-dim); margin-top: 6px;
+}
+
+.story-text .section-label { margin-bottom: 12px; }
+.story-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600; line-height: 1.1;
+  color: var(--dark); margin-bottom: 24px;
+}
+.story-text h2 em { font-style: italic; color: var(--gold-dk); }
+.story-text p {
+  font-size: 16px; line-height: 1.85;
+  color: var(--text-muted); font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.values-section {
+  background: var(--forest);
+  padding: 120px 80px;
+}
+.values-inner { max-width: 1200px; margin: 0 auto; }
+.values-header { text-align: center; margin-bottom: 72px; }
+
+.values-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+  background: rgba(201,168,76,0.1);
+}
+.value-card {
+  background: var(--forest-mid); padding: 52px 48px;
+  transition: background .4s;
+}
+.value-card:hover { background: var(--forest-lt); }
+.value-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; letter-spacing: 3px; color: var(--gold);
+  font-weight: 600; margin-bottom: 20px;
+}
+.value-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 600;
+  color: var(--text-light); margin-bottom: 14px;
+}
+.value-body {
+  font-size: 15px; line-height: 1.8;
+  color: var(--text-dim); font-weight: 300;
+}
+
+.carriers-we-work {
+  background: var(--cream);
+  padding: 100px 80px;
+  text-align: center;
+}
+.carriers-we-work h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 600; color: var(--dark);
+  margin-bottom: 16px;
+}
+.carriers-we-work p {
+  color: var(--text-muted); font-size: 16px;
+  font-weight: 300; margin-bottom: 52px;
+  max-width: 520px; margin-left: auto; margin-right: auto;
+  line-height: 1.75;
+}
+.carrier-cards {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px;
+  background: rgba(0,0,0,0.06); max-width: 1100px; margin: 0 auto;
+}
+.carrier-card {
+  background: white; padding: 40px 24px;
+  text-align: center; font-weight: 700;
+  font-size: 13px; letter-spacing: 1px;
+  color: var(--bark); transition: all .3s;
+}
+.carrier-card:hover { background: var(--forest); color: var(--gold); transform: scale(1.02); }
+.carrier-card-icon { font-size: 28px; margin-bottom: 12px; }
+
+.about-cta {
+  position: relative; overflow: hidden;
+  background: var(--forest);
+  padding: 100px 80px;
+  text-align: center;
+}
+.about-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+}
+.about-cta-inner { position: relative; z-index: 1; }
+.about-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 600; color: var(--text-light);
+  margin-bottom: 20px;
+}
+.about-cta h2 em { font-style: italic; color: var(--gold-lt); }
+.about-cta p {
+  color: var(--text-dim); font-size: 17px; font-weight: 300;
+  max-width: 520px; margin: 0 auto 44px; line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .about-hero { padding: calc(var(--nav-h) + 40px) 28px 80px; }
+  .about-story { padding: 80px 28px; }
+  .about-story-inner { grid-template-columns: 1fr; gap: 60px; }
+  .story-img { height: 380px; }
+  .story-img-accent { display: none; }
+  .values-section, .carriers-we-work, .about-cta { padding: 80px 28px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .carrier-cards { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<script src="js/layout.js"></script>
+
+<section class="about-hero">
+  <div class="about-hero-content">
+    <div class="section-label">Our Story</div>
+    <h1>Built on trust.<br><em>Driven by you.</em></h1>
+    <p>Barkman Financial Group was founded on a simple belief: every family deserves honest, clear insurance guidance — without the pressure, jargon, or fine print.</p>
+  </div>
+</section>
+
+<section class="about-story">
+  <div class="about-story-inner">
+    <div class="story-img reveal left">
+      <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80&fit=crop" alt="Barkman Financial Group advisor">
+      <div class="story-img-accent">
+        <div class="big-stat">15+</div>
+        <span>Years Serving Families</span>
+      </div>
+    </div>
+    <div class="story-text reveal right">
+      <div class="section-label">Who We Are</div>
+      <h2>Independent advisors who <em>work for you</em></h2>
+      <p>Barkman Financial Group is an independent insurance brokerage — which means we aren't tied to any single company, quota, or product line. We shop the market for you across our top-rated carrier partners and find the best fit for your unique situation.</p>
+      <p>We specialize in serving families, retirees, and individuals who are navigating Medicare, thinking about life insurance, planning for final expenses, or looking to fill gaps in their coverage. These are big decisions — and we take them seriously.</p>
+      <p>Our clients aren't policy numbers. We remember their names, their families, and their goals. That's what being independent means to us.</p>
+      <div class="gold-rule"></div>
+      <a href="contact.html" class="btn btn-forest btn-arrow">Start a Conversation</a>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="values-inner">
+    <div class="values-header">
+      <div class="section-label">Our Values</div>
+      <h2 class="section-title light reveal">The principles that <em>guide us</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-num">01 — Honesty</div>
+        <h3 class="value-title">We tell you the truth</h3>
+        <p class="value-body">Even if it means recommending a less expensive plan. Even if it means telling you that you don't need what you thought you did. Your trust is worth more than any commission.</p>
+      </div>
+      <div class="value-card reveal delay-1">
+        <div class="value-num">02 — Clarity</div>
+        <h3 class="value-title">No jargon, no confusion</h3>
+        <p class="value-body">Insurance is complex by design. We translate it. By the time we're done, you'll understand exactly what you're buying, what it covers, and what it doesn't.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="value-num">03 — Independence</div>
+        <h3 class="value-title">We answer to you, not carriers</h3>
+        <p class="value-body">Because we work with multiple carriers, we can objectively compare options and advocate for the one that genuinely serves you best — not the one that pays us the most.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="value-num">04 — Commitment</div>
+        <h3 class="value-title">We stay in your corner</h3>
+        <p class="value-body">Our relationship doesn't end at enrollment. We're here for annual reviews, claim questions, coverage changes, and anything else that comes up along the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="carriers-we-work">
+  <div class="section-label reveal" style="justify-content:center;">Our Partners</div>
+  <h2 class="reveal delay-1">Carriers we trust to <em style="font-style:italic;color:var(--gold-dk);">protect your family</em></h2>
+  <p class="reveal delay-2">We've carefully selected our carrier partners based on financial strength, claim-paying history, and how well they serve our clients.</p>
+  <div class="carrier-cards">
+    <div class="carrier-card reveal">
+      <div class="carrier-card-icon">🏛</div>
+      American Amicable
+    </div>
+    <div class="carrier-card reveal delay-1">
+      <div class="carrier-card-icon">🌐</div>
+      Transamerica
+    </div>
+    <div class="carrier-card reveal delay-2">
+      <div class="carrier-card-icon">🍀</div>
+      Gerber Life
+    </div>
+    <div class="carrier-card reveal delay-3">
+      <div class="carrier-card-icon">🛡</div>
+      Guaranteed Trust Life
+    </div>
+    <div class="carrier-card reveal delay-4">
+      <div class="carrier-card-icon">⚖</div>
+      Mutual of Omaha
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="about-cta-inner">
+    <div class="section-label reveal" style="justify-content:center;">Let's Connect</div>
+    <h2 class="reveal delay-1">Ready to work with someone<br>who puts <em>you first?</em></h2>
+    <p class="reveal delay-2">A conversation costs nothing. A quote takes minutes. And you'll leave knowing exactly where you stand — with zero pressure to do anything else.</p>
+    <a href="contact.html" class="btn btn-primary btn-arrow reveal delay-3" style="padding:18px 48px;font-size:13px;">Schedule a Free Consultation</a>
+  </div>
+</section>
+
+<script src="js/shared.js"></script>
+</body>
+</html>
