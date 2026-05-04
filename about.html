@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" id="pg-top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Barkman Financial Group</title>
+<meta name="description" content="The story behind Barkman Financial Group — founded on real care, built on integrity, serving families across 20+ states from Phoenix, Arizona.">
+<link rel="icon" type="image/png" href="BFG_LOGO.png">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.pg-hero{min-height:62vh;display:flex;align-items:flex-end;background:linear-gradient(rgba(4,9,6,.95),rgba(4,9,6,.95)),url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1800&q=80')center/cover;padding:calc(var(--nav-h)+72px) var(--pad) 72px;position:relative;overflow:hidden}
+.pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 18% 60%,rgba(12,59,46,.42)0%,transparent 54%)}
+.pg-hc{position:relative;z-index:1;max-width:700px}
+.story{background:var(--cream);padding:80px var(--pad);position:relative}
+.story::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23t)' opacity='0.05'/%3E%3C/svg%3E")}
+.story-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.s-img{position:relative;height:500px;overflow:hidden}
+.s-img img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+.s-img:hover img{transform:scale(1.04)}
+.s-badge{position:absolute;bottom:-20px;right:-20px;background:var(--forest);border:1px solid rgba(201,168,76,.22);padding:22px 26px;text-align:center}
+.s-big{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1}
+.s-sml{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-dim);display:block;margin-top:4px}
+.s-txt h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,44px);font-weight:600;color:var(--text-dark);margin-bottom:18px;line-height:1.12}
+.s-txt h2 em{font-style:italic;color:var(--forest-lt)}
+.s-txt p{font-size:15.5px;line-height:1.85;color:var(--text-muted);font-weight:400;margin-bottom:16px}
+.founder-letter{background:var(--forest);padding:80px var(--pad);position:relative;overflow:hidden}
+.founder-letter::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.06)0%,transparent 60%);pointer-events:none}
+.fl-in{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.fl-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);font-style:italic;line-height:1.75;color:rgba(236,242,238,.75);margin-bottom:32px}
+.fl-quote p{margin-bottom:20px}
+.fl-quote p:last-child{margin-bottom:0}
+.fl-sig{border-top:1px solid rgba(201,168,76,.15);padding-top:24px;display:flex;align-items:center;gap:20px}
+.fl-sig-line{width:48px;height:1px;background:var(--gold)}
+.fl-sig-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--gold)}
+.fl-sig-title{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-dim);font-weight:600}
+.vals{background:var(--cream);padding:80px var(--pad);position:relative}
+.vals::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23t)' opacity='0.05'/%3E%3C/svg%3E")}
+.vals-in{max-width:var(--max);margin:0 auto;position:relative;z-index:1}
+.vals-hd{text-align:center;margin-bottom:48px}
+.vals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;background:rgba(12,59,46,.08)}
+.v-card{background:white;padding:40px 36px;transition:all .3s;cursor:default}
+.v-card:hover{background:var(--cream);transform:translateY(-3px);box-shadow:0 12px 40px rgba(12,59,46,.08)}
+.v-num{font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:13px}
+.v-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text-dark);margin-bottom:11px}
+.v-body{font-size:14px;line-height:1.8;color:var(--text-muted);font-weight:400}
+.about-cta{background:var(--forest);padding:80px var(--pad);text-align:center;position:relative;overflow:hidden}
+.about-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.07)0%,transparent 60%)}
+.ac-in{position:relative;z-index:1;max-width:580px;margin:0 auto}
+.ac-in h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,46px);font-weight:600;color:var(--text-light);margin-bottom:14px;line-height:1.12}
+.ac-in h2 em{font-style:italic;color:var(--gold-lt)}
+.ac-in p{color:var(--text-dim);font-size:15.5px;font-weight:400;line-height:1.8;margin-bottom:32px}
+@media(max-width:900px){.story-in{grid-template-columns:1fr;gap:44px}.s-img{height:320px}.s-badge{display:none}.vals-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<script src="js/layout.js"></script>
+
+<section class="pg-hero">
+  <div class="pg-hc">
+    <div class="lbl">Our Story</div>
+    <h1 class="display" style="font-size:clamp(38px,5.2vw,74px);">Built on real care.<br><em>Driven by principle.</em></h1>
+    <p class="body-t lt" style="margin-top:18px;max-width:520px;">Barkman Financial Group exists because families deserve honest guidance — not a sales pitch. That belief is not a marketing line. It is the foundation this company was built on.</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="story-in">
+    <div class="s-img r lft">
+      <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80&fit=crop" alt="Barkman Financial Group">
+      <div class="s-badge"><div class="s-big">20+</div><span class="s-sml">States Licensed</span></div>
+    </div>
+    <div class="r rgt">
+      <div class="lbl">Who We Are</div>
+      <h2>An independent brokerage that answers to <em>you</em></h2>
+      <p>Barkman Financial Group is an independent insurance brokerage based in Phoenix, Arizona. We are not tied to any single carrier, quota, or product line. We shop across our network of trusted carrier partners and find what genuinely fits — even when that means a less expensive option.</p>
+      <p>We specialize in Medicare, life insurance, annuities, final expense, and supplemental coverage for families and retirees across more than 20 states. These are significant decisions. We approach each one with the seriousness they deserve.</p>
+      <p>Our clients are not policy numbers. We know their names, their families, and their goals — and we stay connected long after enrollment.</p>
+      <div class="gold-bar"></div>
+      <a href="contact.html" class="btn btn-forest">Start a Conversation →</a>
+    </div>
+  </div>
+</section>
+
+<section class="founder-letter">
+  <div class="fl-in">
+    <div class="lbl r" style="justify-content:center;margin-bottom:32px;">From the Founder</div>
+    <div class="fl-quote r d2">
+      <p>I did not build Barkman Financial Group to have a company. I built it because I spent years as an EMT, as a caregiver, as a university counselor — sitting with people at the hardest moments of their lives. I have held the hands of people who had nothing. I have watched families scramble to bury someone they loved because nobody planned ahead.</p>
+      <p>That is why this company exists. Not to sell policies. To protect families. Those are not the same thing.</p>
+      <p>If a policy is not right for someone, we do not sell it. If it comes down to a commission or an elderly person being able to make ends meet, there is no decision to make. We build this business on what happens after the policy is sold — on whether the people we worked with are genuinely better protected. That is the standard.</p>
+    </div>
+    <div class="fl-sig r d3">
+      <div class="fl-sig-line"></div>
+      <div>
+        <div class="fl-sig-name">Barkman Financial Group</div>
+        <div class="fl-sig-title">Founded 2026 · Phoenix, Arizona</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vals">
+  <div class="vals-in">
+    <div class="vals-hd r">
+      <div class="lbl" style="justify-content:center;">Our Values</div>
+      <h2 class="h2 r d2" style="color:var(--text-dark);">The principles that <em>guide every decision</em></h2>
+    </div>
+    <div class="vals-grid">
+      <div class="v-card r"><div class="v-num">01 — Integrity</div><h3 class="v-title">We tell the truth</h3><p class="v-body">Even when it costs us. If a policy isn't right for someone, we say so. Our long-term reputation matters more than any single transaction.</p></div>
+      <div class="v-card r d2"><div class="v-num">02 — Independence</div><h3 class="v-title">We answer to clients</h3><p class="v-body">Because we work with multiple carriers, we can objectively compare and advocate for what genuinely serves each client — not what pays us the most.</p></div>
+      <div class="v-card r d3"><div class="v-num">03 — Care</div><h3 class="v-title">We actually listen</h3><p class="v-body">These are real people with real families. When someone tells us about their grandchildren or their late spouse, we listen — and we mean it.</p></div>
+      <div class="v-card r d4"><div class="v-num">04 — Commitment</div><h3 class="v-title">We follow through</h3><p class="v-body">If we say we'll call someone back, we call them back. If we tell a client we'll get them an answer, we get them an answer. Our word is our identity.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="ac-in">
+    <div class="lbl r" style="justify-content:center;">Let's Connect</div>
+    <h2 class="r d2">Ready to work with someone who puts <em>you first?</em></h2>
+    <p class="r d3">A conversation costs nothing. A consultation takes 20 minutes. You'll leave knowing exactly where you stand — with zero pressure to do anything else.</p>
+    <a href="contact.html" class="btn btn-gold btn-arrow r d4" style="padding:15px 40px;font-size:11px;">Schedule a Free Consultation →</a>
+  </div>
+</section>
+
+<script src="js/shared.js"></script>
+</body>
+</html>

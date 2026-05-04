@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" id="pg-top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Expense Insurance — Barkman Financial Group</title>
+<meta name="description" content="Final expense whole life insurance. No medical exam. Rate locked for life. Coverage that protects your family from end-of-life costs. Phoenix, AZ. 602-680-0058.">
+<link rel="icon" type="image/png" href="BFG_LOGO.png">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.pg-hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(112deg,rgba(4,9,6,.97)0%,rgba(4,9,6,.91)36%,rgba(4,9,6,.62)58%,rgba(4,9,6,.1)100%),url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1800&q=85&fit=crop')center/cover;padding:calc(var(--nav-h)+72px) var(--pad) 80px;position:relative;overflow:hidden}
+.pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 8% 60%,rgba(12,59,46,.45)0%,transparent 50%)}
+.feh-in{position:relative;z-index:1;max-width:var(--max);margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.feh-eye{display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:5px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:24px}
+.feh-eye::after{content:'';flex:0 0 36px;height:1px;background:var(--gold)}
+.feh-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,74px);font-weight:700;line-height:1.06;color:var(--text-light)}
+.feh-h1 em{font-style:italic;color:var(--gold-lt);display:block}
+.feh-sub{font-size:clamp(14px,1.7vw,17px);line-height:1.78;font-weight:400;color:rgba(236,242,238,.62);max-width:480px;margin-top:18px}
+.feh-keys{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:rgba(201,168,76,.08);margin-top:28px}
+.feh-key{background:rgba(6,16,11,.7);padding:15px 18px;display:flex;gap:10px;align-items:flex-start}
+.feh-key-ico{font-size:16px;flex-shrink:0}
+.feh-key-txt{font-size:13px;color:rgba(236,242,238,.7);font-weight:400;line-height:1.55}
+.feh-key-txt strong{color:var(--gold-lt);display:block;font-size:11.5px;font-weight:700;letter-spacing:.5px;margin-bottom:2px}
+.feh-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.feh-card{background:rgba(6,16,11,.9);border:1px solid rgba(201,168,76,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:36px 32px;position:relative}
+.feh-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold),var(--gold-lt))}
+.feh-card-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--text-light);margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,.12)}
+.feh-cost-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(201,168,76,.07);font-size:13px;color:var(--text-dim);font-weight:400}
+.feh-cost-row:last-of-type{border-bottom:none;margin-bottom:18px}
+.feh-cost-num{color:var(--gold-lt);font-weight:600;font-size:14px}
+
+.fe-what{background:var(--cream);padding:72px var(--pad);position:relative}
+.fe-what::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23t)' opacity='0.05'/%3E%3C/svg%3E")}
+.few-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:1}
+.few-txt h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,44px);font-weight:600;color:var(--text-dark);margin-bottom:18px;line-height:1.12}
+.few-txt h2 em{font-style:italic;color:var(--forest-lt)}
+.few-txt p{font-size:15.5px;line-height:1.85;color:var(--text-muted);font-weight:400;margin-bottom:16px}
+.fe-reality{background:var(--forest);padding:28px 30px}
+.fer-title{font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px}
+.fer-item{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(201,168,76,.1);font-size:13.5px}
+.fer-item:last-child{border-bottom:none}
+.fer-name{color:var(--text-dim);font-weight:400}
+.fer-cost{color:var(--gold-lt);font-weight:600}
+
+.fe-types{background:var(--forest);padding:72px var(--pad)}
+.ft-in{max-width:var(--max);margin:0 auto}
+.ft-hd{text-align:center;margin-bottom:48px}
+.ft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:rgba(201,168,76,.07)}
+.ft-card{background:var(--forest-mid);padding:36px 28px;transition:background .3s;cursor:default}
+.ft-card:hover{background:var(--forest-lt)}
+.ft-badge{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;display:inline-block;padding:4px 10px;background:rgba(201,168,76,.1)}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text-light);margin-bottom:8px}
+.ft-desc{font-size:13.5px;color:var(--text-dim);font-weight:400;line-height:1.72;margin-bottom:18px}
+.ft-list{list-style:none}
+.ft-list li{display:flex;gap:9px;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(201,168,76,.07);font-size:13px;color:var(--text-dim);font-weight:400}
+.ft-list li:last-child{border-bottom:none}
+.ft-list li::before{content:'✓';color:var(--gold);flex-shrink:0;font-weight:700;font-size:10px;margin-top:3px}
+
+.fe-faq{background:var(--cream);padding:72px var(--pad);position:relative}
+.fe-faq::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23t)' opacity='0.05'/%3E%3C/svg%3E")}
+.fef-in{max-width:840px;margin:0 auto;position:relative;z-index:1}
+
+.fe-cta{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center}
+.fe-cta-bg{position:absolute;inset:0;background:linear-gradient(rgba(4,9,6,.92),rgba(4,9,6,.92)),url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1800&q=80&fit=crop')center/cover}
+.fec-in{position:relative;z-index:1;max-width:var(--max);margin:0 auto;width:100%;padding:72px var(--pad);display:grid;grid-template-columns:1fr auto;align-items:center;gap:64px}
+.fec-in h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.4vw,48px);font-weight:600;color:var(--text-light);line-height:1.1;margin-bottom:12px}
+.fec-in h2 em{font-style:italic;color:var(--gold-lt)}
+.fec-in>div>p{color:var(--text-dim);font-size:15px;font-weight:400;line-height:1.8;max-width:440px}
+.fec-right{text-align:center;flex-shrink:0}
+.fec-ph{display:block;font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:1.5px;margin-bottom:6px;transition:color .2s}
+.fec-ph:hover{color:var(--gold-lt)}
+.fec-hrs{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-xdim);margin-bottom:18px;display:block}
+@media(max-width:1024px){.feh-in,.few-in{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr}.fec-in{grid-template-columns:1fr;text-align:center;gap:40px}.fec-in>div>p{margin-left:auto;margin-right:auto}}
+</style>
+</head>
+<body>
+<script src="js/layout.js"></script>
+
+<section class="pg-hero">
+  <div class="feh-in">
+    <div>
+      <div class="feh-eye">Final Expense Insurance</div>
+      <h1 class="feh-h1">Protect your family from<br><em>costs they shouldn't bear.</em></h1>
+      <p class="feh-sub">Final expense insurance is whole life coverage designed to handle end-of-life costs — funeral, burial, medical bills, and outstanding debts. One rate, locked for life. Never expires. Never changes.</p>
+      <div class="feh-keys">
+        <div class="feh-key"><span class="feh-key-ico">🔒</span><div class="feh-key-txt"><strong>Rate locked for life</strong>The premium you start with is the premium you'll always have.</div></div>
+        <div class="feh-key"><span class="feh-key-ico">🏥</span><div class="feh-key-txt"><strong>No medical exam</strong>Health questions only. No paramedical exam required.</div></div>
+        <div class="feh-key"><span class="feh-key-ico">♾</span><div class="feh-key-txt"><strong>Never expires</strong>Whole life coverage stays in force as long as premiums are paid.</div></div>
+        <div class="feh-key"><span class="feh-key-ico">💰</span><div class="feh-key-txt"><strong>Tax-free benefit</strong>Death benefit paid tax-free directly to your beneficiaries.</div></div>
+      </div>
+      <div class="feh-btns">
+        <a href="contact.html" class="btn btn-gold">Get a Free Quote →</a>
+        <a href="#fe-types" class="btn btn-outline">Coverage Options</a>
+      </div>
+    </div>
+    <div class="feh-card r rgt">
+      <div class="feh-card-title">Sample monthly premiums</div>
+      <div class="feh-cost-row"><span>Age 55, $10,000 coverage</span><span class="feh-cost-num">~$28–$42/mo</span></div>
+      <div class="feh-cost-row"><span>Age 65, $10,000 coverage</span><span class="feh-cost-num">~$44–$68/mo</span></div>
+      <div class="feh-cost-row"><span>Age 75, $10,000 coverage</span><span class="feh-cost-num">~$72–$108/mo</span></div>
+      <div class="feh-cost-row"><span>Age 80, $10,000 coverage</span><span class="feh-cost-num">~$98–$148/mo</span></div>
+      <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;padding:13px;font-size:11px;margin-top:0">Get My Exact Rate →</a>
+      <p style="font-size:10.5px;color:var(--text-dim);font-weight:400;margin-top:14px;line-height:1.55;">Estimates for qualified applicants. Rates vary by age, gender, health, tobacco use, state, and carrier.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fe-what">
+  <div class="few-in">
+    <div class="few-txt r lft">
+      <div class="lbl">What Final Expense Covers</div>
+      <h2>The real cost of losing<br>someone you <em>love</em></h2>
+      <p>The average funeral in the United States costs between $8,000 and $12,000. Add in any remaining medical bills, credit card balances, or personal loans — and the financial burden on your family can reach $20,000 or more.</p>
+      <p>Final expense insurance exists to remove that burden completely. Your family receives a tax-free lump sum, paid directly to your beneficiary — within days of a certified claim — to handle costs exactly as they choose.</p>
+      <p>The coverage is permanent. The rate never increases. And it never requires a medical exam to qualify.</p>
+      <div class="gold-bar"></div>
+      <a href="contact.html" class="btn btn-forest">Get a Free Quote →</a>
+    </div>
+    <div class="r rgt">
+      <div class="fe-reality">
+        <div class="fer-title">Average end-of-life costs (national)</div>
+        <div class="fer-item"><span class="fer-name">Funeral &amp; burial service</span><span class="fer-cost">$8,000–$12,000</span></div>
+        <div class="fer-item"><span class="fer-name">Cremation with service</span><span class="fer-cost">$2,000–$4,500</span></div>
+        <div class="fer-item"><span class="fer-name">Outstanding medical bills</span><span class="fer-cost">Varies widely</span></div>
+        <div class="fer-item"><span class="fer-name">Headstone / marker</span><span class="fer-cost">$1,500–$4,000</span></div>
+        <div class="fer-item"><span class="fer-name">Death certificates (multiple)</span><span class="fer-cost">$150–$400</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fe-types" id="fe-types">
+  <div class="ft-in">
+    <div class="ft-hd r">
+      <div class="lbl" style="justify-content:center;">Coverage Options</div>
+      <h2 class="h2 lt r d2">Three coverage paths.<br><em>One for every health situation.</em></h2>
+    </div>
+    <div class="ft-grid">
+      <div class="ft-card r">
+        <div class="ft-badge">Best Rates</div>
+        <div class="ft-name">Level Benefit</div>
+        <p class="ft-desc">Full death benefit from day one. Available for applicants in reasonably good health. Typically the most affordable final expense option.</p>
+        <ul class="ft-list">
+          <li>Full death benefit from day one</li>
+          <li>Best available premium rates</li>
+          <li>Health questions required</li>
+          <li>No medical exam</li>
+        </ul>
+      </div>
+      <div class="ft-card r d2">
+        <div class="ft-badge">Graded Benefit</div>
+        <div class="ft-name">Modified Benefit</div>
+        <p class="ft-desc">For applicants with more significant health history. A modified death benefit applies in the first 2–3 years, with full coverage after that period.</p>
+        <ul class="ft-list">
+          <li>Accepts more health conditions</li>
+          <li>Partial benefit in first 2–3 years</li>
+          <li>Full benefit after graded period</li>
+          <li>No medical exam</li>
+        </ul>
+      </div>
+      <div class="ft-card r d3">
+        <div class="ft-badge">Guaranteed Issue</div>
+        <div class="ft-name">Guaranteed Acceptance</div>
+        <p class="ft-desc">No health questions. No exam. Cannot be declined. For applicants who have been declined elsewhere or have significant health concerns. Graded benefit in early years.</p>
+        <ul class="ft-list">
+          <li>Cannot be declined for health reasons</li>
+          <li>No health questions whatsoever</li>
+          <li>Waiting period applies (typically 2 years)</li>
+          <li>Higher premium than underwritten plans</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fe-faq">
+  <div class="fef-in">
+    <div style="text-align:center;margin-bottom:40px;" class="r">
+      <div class="lbl" style="justify-content:center;">Common Questions</div>
+      <h2 class="h2 r d2" style="color:var(--text-dark);">Final expense questions <em>answered plainly</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q"><span class="faq-qt">How is final expense different from regular life insurance?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">Final expense is a type of whole life insurance with lower coverage amounts (typically $5,000–$35,000) and simplified underwriting — no medical exam. It's specifically designed to cover end-of-life costs and tends to be more accessible to seniors, including those with health conditions that might disqualify them from traditional life insurance.</div></div></div>
+      <div class="faq-item"><button class="faq-q"><span class="faq-qt">Can I qualify even if I have health issues?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">In most cases, yes. We work with multiple carriers with different underwriting standards. Even clients with diabetes, COPD, heart history, or other conditions can often qualify — sometimes for level benefit coverage, sometimes for a graded or guaranteed issue product. We'll find the best option for your specific health profile.</div></div></div>
+      <div class="faq-item"><button class="faq-q"><span class="faq-qt">What if I can't afford the premiums later?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">We set coverage amounts that fit your budget from day one — we never recommend a premium you can't comfortably sustain. Most policies also build cash value over time that can be accessed if needed. We'll never put someone in a policy that stretches their income to the point of lapsing.</div></div></div>
+      <div class="faq-item"><button class="faq-q"><span class="faq-qt">How quickly does the death benefit get paid?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">Most carriers pay within 3–7 business days of receiving a completed claim with a death certificate. Some carriers pay even faster. The benefit is paid as a tax-free lump sum directly to your named beneficiary — no probate required, no restrictions on how it's used.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="fe-cta">
+  <div class="fe-cta-bg"></div>
+  <div class="fec-in">
+    <div class="r lft">
+      <div class="lbl">Get Covered Today</div>
+      <h2>The longer you wait,<br><em>the higher your premium.</em></h2>
+      <p>Rates increase with age. Every year you wait means a permanently higher monthly payment for the same coverage. The best time to get a quote was five years ago. The second best time is today.</p>
+    </div>
+    <div class="fec-right r rgt">
+      <a href="tel:6026800058" class="fec-ph">602-680-0058</a>
+      <span class="fec-hrs">Call or text — we answer</span>
+      <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;padding:15px;font-size:11px;">Get a Free Quote →</a>
+    </div>
+  </div>
+</section>
+
+<script src="js/shared.js"></script>
+</body>
+</html>

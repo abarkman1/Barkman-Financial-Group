@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" id="pg-top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicare Plans — Barkman Financial Group | Phoenix, AZ</title>
+<meta name="description" content="Medicare Supplement, Advantage, and Part D explained clearly. Independent Medicare guidance for Arizona and 20+ states. We check your doctors and medications before recommending anything.">
+<link rel="icon" type="image/png" href="BFG_LOGO.png">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.pg-hero{min-height:82vh;display:flex;align-items:center;background:linear-gradient(112deg,rgba(4,9,6,.97)0%,rgba(4,9,6,.92)36%,rgba(4,9,6,.64)56%,rgba(4,9,6,.12)100%),url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1800&q=85&fit=crop')center/cover;padding:calc(var(--nav-h)+72px) var(--pad) 80px;position:relative;overflow:hidden}
+.pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 8% 60%,rgba(12,59,46,.45)0%,transparent 52%)}
+.mh-in{position:relative;z-index:1;max-width:var(--max);margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.mh-eye{display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:5px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:22px}
+.mh-eye::after{content:'';flex:0 0 36px;height:1px;background:var(--gold)}
+.mh-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,74px);font-weight:700;line-height:1.06;color:var(--text-light)}
+.mh-h1 em{font-style:italic;color:var(--gold-lt);display:block}
+.mh-sub{font-size:clamp(14px,1.7vw,17px);line-height:1.82;font-weight:400;color:rgba(240,245,241,.78);max-width:480px;margin-top:18px}
+.mh-list{display:flex;flex-direction:column;gap:0;margin-top:22px}
+.mh-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(201,168,76,.1);font-size:14px;color:rgba(240,245,241,.82);font-weight:400;line-height:1.55}
+.mh-item:last-child{border-bottom:none}
+.mh-item::before{content:'✓';color:var(--gold);font-weight:700;font-size:10px;flex-shrink:0;margin-top:3px}
+.mh-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.mh-card{background:rgba(6,16,11,.92);border:1px solid rgba(201,168,76,.22);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:36px 32px;position:relative}
+.mh-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold),var(--gold-lt))}
+.mhc-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--text-light);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,.12)}
+.mhc-when{font-size:12.5px;color:rgba(240,245,241,.65);font-weight:300;margin-bottom:20px;line-height:1.65;padding:12px 14px;background:rgba(201,168,76,.07);border-left:2px solid var(--gold)}
+.mhc-types{display:flex;flex-direction:column;gap:2px}
+.mhc-type{padding:12px 14px;background:rgba(12,59,46,.5);border:1px solid rgba(201,168,76,.1);transition:border-color .18s}
+.mhc-type:hover{border-color:rgba(201,168,76,.35)}
+.mhc-type-name{font-size:12px;font-weight:600;color:var(--text-light);margin-bottom:2px}
+.mhc-type-desc{font-size:11.5px;color:rgba(240,245,241,.55);font-weight:300}
+.mhc-cta{display:flex;margin-top:20px;width:100%;justify-content:center;padding:14px;font-size:11px}
+
+/* What is Medicare */
+.med-basics{background:var(--cream);padding:80px var(--pad);position:relative}
+.med-basics::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23t)' opacity='0.05'/%3E%3C/svg%3E")}
+.mb-in{max-width:var(--max);margin:0 auto;position:relative;z-index:1}
+.mb-hd{margin-bottom:48px}
+.parts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:rgba(12,59,46,.08)}
+.part-card{background:white;padding:28px 24px;transition:all .3s;cursor:default}
+.part-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(12,59,46,.08)}
+.part-letter{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:rgba(12,59,46,.08);line-height:1;margin-bottom:2px}
+.part-name{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.part-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--text-dark);margin-bottom:10px}
+.part-desc{font-size:13.5px;line-height:1.72;color:var(--text-muted);font-weight:400}
+.part-cost{font-size:12px;font-weight:600;color:var(--forest);margin-top:10px;padding-top:10px;border-top:1px solid rgba(0,0,0,.06)}
+.med-explain{max-width:820px;margin:52px auto 0;background:white;border:1px solid rgba(0,0,0,.06);padding:36px 40px}
+.me-title{font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px}
+.me-body{font-size:15.5px;line-height:1.85;color:var(--text-muted);font-weight:400}
+.me-body strong{color:var(--text-dark);font-weight:600}
+
+/* Plan Types */
+.plan-types{background:var(--forest);padding:80px var(--pad)}
+.pt-in{max-width:var(--max);margin:0 auto}
+.pt-hd{text-align:center;margin-bottom:52px}
+.pt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:rgba(201,168,76,.07)}
+.pt-card{background:var(--forest-mid);padding:40px 32px;transition:background .3s;cursor:default}
+.pt-card:hover{background:var(--forest-lt)}
+.pt-badge{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;display:inline-block;padding:4px 10px;background:rgba(201,168,76,.1)}
+.pt-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--text-light);margin-bottom:8px}
+.pt-tagline{font-size:12.5px;color:rgba(201,168,76,.65);font-weight:400;margin-bottom:16px;font-style:italic}
+.pt-desc{font-size:14px;color:rgba(240,245,241,.75);font-weight:400;line-height:1.75;margin-bottom:20px}
+.pt-list{list-style:none}
+.pt-list li{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(201,168,76,.08);font-size:13.5px;color:rgba(240,245,241,.68);font-weight:300;line-height:1.55}
+.pt-list li:last-child{border-bottom:none}
+.pt-list li::before{content:'✓';color:var(--gold);flex-shrink:0;font-weight:700;font-size:10px;margin-top:3px}
+.pt-list li.con{color:rgba(240,245,241,.4)}
+.pt-list li.con::before{content:'→';color:rgba(240,245,241,.25)}
+
+/* Comparison */
+.med-compare{background:white;padding:80px var(--pad)}
+.mc2-in{max-width:900px;margin:0 auto}
+.mc2-hd{text-align:center;margin-bottom:44px}
+.compare-table{width:100%;border-collapse:collapse}
+.compare-table th{padding:14px 18px;text-align:left;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--gold);background:var(--forest);border-right:1px solid rgba(201,168,76,.1)}
+.compare-table th:last-child{border-right:none}
+.compare-table td{padding:15px 18px;font-size:14px;color:var(--text-body);border-bottom:1px solid rgba(0,0,0,.05);border-right:1px solid rgba(0,0,0,.04);line-height:1.5}
+.compare-table td:last-child{border-right:none}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr:hover td{background:var(--cream)}
+.check{color:var(--forest);font-weight:700}
+.ex{color:rgba(100,100,100,.5)}
+
+/* Enrollment */
+.med-enroll{background:var(--cream);padding:80px var(--pad);position:relative}
+.med-enroll::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23t)' opacity='0.05'/%3E%3C/svg%3E")}
+.me2-in{max-width:var(--max);margin:0 auto;position:relative;z-index:1}
+.me2-hd{text-align:center;margin-bottom:48px}
+.enroll-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;background:rgba(12,59,46,.08)}
+.enroll-card{background:white;padding:36px 32px;transition:all .3s;cursor:default}
+.enroll-card:hover{box-shadow:0 12px 36px rgba(12,59,46,.08)}
+.en-period{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:11px;display:inline-block;padding:4px 10px;background:rgba(12,59,46,.06)}
+.en-name{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:var(--text-dark);margin-bottom:6px}
+.en-when{font-size:12px;font-weight:600;color:var(--forest);margin-bottom:12px}
+.en-desc{font-size:14px;line-height:1.78;color:var(--text-muted);font-weight:400}
+.en-warn{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:12px 14px;background:rgba(180,60,40,.06);border-left:2px solid rgba(180,60,40,.35);font-size:12.5px;color:var(--text-muted);font-weight:400;line-height:1.55}
+.en-warn::before{content:'⚠';font-size:14px;flex-shrink:0}
+
+/* FAQ */
+.med-faq{background:var(--forest);padding:80px var(--pad)}
+.mf-in{max-width:860px;margin:0 auto}
+.mf-hd{text-align:center;margin-bottom:40px}
+
+/* CTA */
+.med-cta{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center}
+.med-cta-bg{position:absolute;inset:0;background:linear-gradient(rgba(4,9,6,.9),rgba(4,9,6,.9)),url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1800&q=80&fit=crop')center/cover}
+.mc3-in{position:relative;z-index:1;max-width:var(--max);margin:0 auto;width:100%;padding:72px var(--pad);display:grid;grid-template-columns:1fr auto;align-items:center;gap:64px}
+.mc3-in h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.4vw,48px);font-weight:600;color:var(--text-light);line-height:1.1;margin-bottom:12px}
+.mc3-in h2 em{font-style:italic;color:var(--gold-lt)}
+.mc3-in>div>p{color:rgba(240,245,241,.75);font-size:15px;font-weight:400;line-height:1.8;max-width:440px}
+.mc3-right{text-align:center;flex-shrink:0}
+.mc3-ph{display:block;font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:1.5px;margin-bottom:6px;transition:color .2s}
+.mc3-ph:hover{color:var(--gold-lt)}
+.mc3-hrs{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(240,245,241,.38);margin-bottom:18px;display:block}
+
+@media(max-width:1024px){.mh-in{grid-template-columns:1fr}.parts-grid{grid-template-columns:repeat(2,1fr)}.pt-grid{grid-template-columns:1fr}.enroll-grid{grid-template-columns:1fr}.mc3-in{grid-template-columns:1fr;text-align:center;gap:40px}.mc3-in>div>p{margin-left:auto;margin-right:auto}}
+@media(max-width:600px){.parts-grid{grid-template-columns:1fr}.med-explain{padding:24px 20px}}
+</style>
+</head>
+<body>
+<script src="js/layout.js"></script>
+
+<section class="pg-hero">
+  <div class="mh-in">
+    <div>
+      <div class="mh-eye">Medicare Plans</div>
+      <h1 class="mh-h1">Medicare done right.<br><em>From the first call.</em></h1>
+      <p class="mh-sub">Medicare is more complex than most people realize — and the decisions you make when you first enroll can affect your coverage and your costs for years. We slow it down, explain everything clearly, and make sure you choose the right plan for your specific situation.</p>
+      <div class="mh-list">
+        <div class="mh-item">We verify your doctors are in-network before you sign anything</div>
+        <div class="mh-item">We check every medication against plan formularies</div>
+        <div class="mh-item">We compare Supplement, Advantage, and Part D options side by side</div>
+        <div class="mh-item">We review your plan every year during Annual Enrollment Period</div>
+        <div class="mh-item">Our service costs you nothing — we are paid by the carriers</div>
+      </div>
+      <div class="mh-btns">
+        <a href="contact.html" class="btn btn-gold">Get a Free Medicare Review →</a>
+        <a href="#plan-types" class="btn btn-outline">Compare Plan Types</a>
+      </div>
+    </div>
+    <div class="mh-card r rgt">
+      <div class="mhc-title">When to call us</div>
+      <div class="mhc-when">Turning 65? Your Initial Enrollment Period opens 3 months before your birthday month. This is the most important Medicare window you will ever have — getting it right here protects your coverage for years.</div>
+      <div class="mhc-types">
+        <div class="mhc-type"><div class="mhc-type-name">Turning 65 Soon</div><div class="mhc-type-desc">Call 3 months before your 65th birthday month</div></div>
+        <div class="mhc-type"><div class="mhc-type-name">Leaving Employer Coverage</div><div class="mhc-type-desc">Special Enrollment Period — call when you know your end date</div></div>
+        <div class="mhc-type"><div class="mhc-type-name">Already on Medicare</div><div class="mhc-type-desc">Annual review Oct 15–Dec 7 — is your plan still right?</div></div>
+      </div>
+      <a href="contact.html" class="btn btn-gold mhc-cta">Get a Free Review →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Medicare 101 -->
+<section class="med-basics">
+  <div class="mb-in">
+    <div class="mb-hd r">
+      <div class="lbl">Understanding Medicare</div>
+      <h2 class="h2" style="color:var(--text-dark);max-width:640px;">Medicare has four parts.<br><em>Each covers something different.</em></h2>
+      <p style="color:var(--text-muted);font-size:16px;font-weight:400;line-height:1.78;max-width:620px;margin-top:14px;">Original Medicare from the government has gaps — it does not cover everything, and what it doesn't cover can be significant. Understanding what each part covers helps you understand what private insurance fills in.</p>
+    </div>
+    <div class="parts-grid r d2">
+      <div class="part-card">
+        <div class="part-letter">A</div>
+        <div class="part-name">Medicare Part A</div>
+        <h3 class="part-title">Hospital Insurance</h3>
+        <p class="part-desc">Covers inpatient hospital stays, skilled nursing facility care, hospice care, and some home health services. Most people get Part A premium-free if they or their spouse worked and paid Medicare taxes for at least 10 years.</p>
+        <div class="part-cost">Most people: $0 premium · Hospital deductible applies</div>
+      </div>
+      <div class="part-card">
+        <div class="part-letter">B</div>
+        <div class="part-name">Medicare Part B</div>
+        <h3 class="part-title">Medical Insurance</h3>
+        <p class="part-desc">Covers doctor visits, outpatient care, preventive services, and medical equipment. Part B has a monthly premium, an annual deductible, and typically covers 80% of approved costs — leaving you responsible for 20% with no out-of-pocket limit.</p>
+        <div class="part-cost">Standard premium ~$174/mo (2024) · 20% coinsurance after deductible</div>
+      </div>
+      <div class="part-card">
+        <div class="part-letter">C</div>
+        <div class="part-name">Medicare Part C</div>
+        <h3 class="part-title">Medicare Advantage</h3>
+        <p class="part-desc">A private insurance alternative to Original Medicare. Part C plans bundle Part A, Part B, and usually Part D together. Often includes dental, vision, and hearing. Network-based. Many plans have $0 monthly premium. Administered by private carriers.</p>
+        <div class="part-cost">Often $0 premium · Network restrictions apply · Out-of-pocket maximum</div>
+      </div>
+      <div class="part-card">
+        <div class="part-letter">D</div>
+        <div class="part-name">Medicare Part D</div>
+        <h3 class="part-title">Prescription Drug Coverage</h3>
+        <p class="part-desc">Standalone prescription drug coverage added to Original Medicare or a Supplement plan. Each plan has its own formulary — the list of drugs it covers and at what cost. Formularies change every year. We check your exact medications against every plan before recommending one.</p>
+        <div class="part-cost">Monthly premium varies · Late enrollment penalty if missed</div>
+      </div>
+    </div>
+    <div class="med-explain r d3">
+      <div class="me-title">The gap Original Medicare leaves — and why it matters</div>
+      <p class="me-body">Original Medicare (Parts A and B) covers roughly 80% of approved medical costs. <strong>The remaining 20% has no cap.</strong> A major surgery, extended hospital stay, or serious illness can leave you with tens of thousands of dollars in out-of-pocket costs. This is the gap that Medicare Supplement (Medigap) plans are designed to fill — and why choosing the right coverage structure matters more than most people realize.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Plan Types -->
+<section class="plan-types" id="plan-types">
+  <div class="pt-in">
+    <div class="pt-hd r">
+      <div class="lbl" style="justify-content:center;">Your Coverage Options</div>
+      <h2 class="h2 lt r d2">Three paths through Medicare.<br><em>One right answer for your situation.</em></h2>
+      <p class="r d3" style="color:rgba(240,245,241,.72);font-size:16px;font-weight:400;line-height:1.78;max-width:560px;margin:14px auto 0;text-align:center;">We don't push one type over another. The right path depends on your doctors, your medications, your budget, and how often you use healthcare.</p>
+    </div>
+    <div class="pt-grid">
+      <div class="pt-card r">
+        <div class="pt-badge">Most Flexible</div>
+        <div class="pt-name">Medicare Supplement (Medigap)</div>
+        <div class="pt-tagline">Works alongside Original Medicare to cover the gaps</div>
+        <p class="pt-desc">A Medigap policy is private insurance that pays for costs Original Medicare doesn't cover — deductibles, copayments, and coinsurance. Plans are standardized by letter (Plan G, Plan N, etc.) so benefits are identical across carriers. The only difference between carriers is the premium. You keep your Medicare card, see any doctor who accepts Medicare, and get coverage nationwide.</p>
+        <ul class="pt-list">
+          <li>See any doctor or specialist who accepts Medicare — no network</li>
+          <li>Coverage applies anywhere in the country</li>
+          <li>Predictable, capped out-of-pocket costs</li>
+          <li>No referrals required</li>
+          <li>Guaranteed renewable — cannot be cancelled due to health changes</li>
+          <li class="con">Higher monthly premium than Advantage plans</li>
+          <li class="con">Does not include drug coverage — need separate Part D</li>
+          <li class="con">Medical underwriting may apply after Initial Enrollment Period</li>
+        </ul>
+      </div>
+      <div class="pt-card r d2">
+        <div class="pt-badge">Most Popular</div>
+        <div class="pt-name">Medicare Advantage (Part C)</div>
+        <div class="pt-tagline">All-in-one coverage through a private carrier</div>
+        <p class="pt-desc">Medicare Advantage plans are an alternative to Original Medicare. You still have Medicare, but a private insurer manages your coverage. Most plans bundle Part A, Part B, and Part D together and often add dental, vision, and hearing benefits that Original Medicare doesn't cover. Most plans have a $0 or very low monthly premium. You use a network of doctors and hospitals — coverage outside the network may be limited or unavailable.</p>
+        <ul class="pt-list">
+          <li>Often $0 monthly premium</li>
+          <li>Bundled medical, prescription drug, dental, vision, and hearing</li>
+          <li>Out-of-pocket maximum protects against catastrophic costs</li>
+          <li>Coordinated care within a provider network</li>
+          <li class="con">Network restrictions — not all doctors are covered</li>
+          <li class="con">Prior authorization may be required for some services</li>
+          <li class="con">Plans vary significantly by county and carrier</li>
+        </ul>
+      </div>
+      <div class="pt-card r d3">
+        <div class="pt-badge">Prescription Only</div>
+        <div class="pt-name">Medicare Part D</div>
+        <div class="pt-tagline">Standalone prescription drug coverage</div>
+        <p class="pt-desc">If you have Original Medicare plus a Supplement, you need a standalone Part D plan for prescription drug coverage. Each plan maintains its own formulary — the list of drugs it covers, which tier they're on, and what you'll pay at the pharmacy. Formularies change every year, which is why we review every client's Part D coverage annually during Annual Enrollment Period.</p>
+        <ul class="pt-list">
+          <li>We match your exact medication list to each plan's formulary</li>
+          <li>We compare total annual drug costs — not just monthly premiums</li>
+          <li>Coverage reviewed annually — formularies change every year</li>
+          <li>Late enrollment penalty if you go without coverage too long</li>
+          <li class="con">Coverage details vary significantly between plans</li>
+          <li class="con">Must be reviewed annually — last year's best plan may not be best now</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Side by Side Comparison -->
+<section class="med-compare">
+  <div class="mc2-in">
+    <div class="mc2-hd r">
+      <div class="lbl" style="justify-content:center;">Side by Side</div>
+      <h2 class="h2 r d2" style="color:var(--text-dark);">Supplement vs. Advantage<br><em>The key differences</em></h2>
+    </div>
+    <table class="compare-table r d2">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Medicare Supplement</th>
+          <th>Medicare Advantage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly premium</td><td>Higher ($80–$250+/mo typical)</td><td>Often $0 or very low</td></tr>
+        <tr><td>Doctor choice</td><td><span class="check">✓</span> Any Medicare provider</td><td>Network only</td></tr>
+        <tr><td>Out-of-pocket max</td><td><span class="check">✓</span> Very low (Plan G ~$240/yr deductible)</td><td>Higher ($3,500–$8,300/yr)</td></tr>
+        <tr><td>Nationwide coverage</td><td><span class="check">✓</span> Yes</td><td>Usually limited to service area</td></tr>
+        <tr><td>Drug coverage</td><td>Separate Part D needed</td><td><span class="check">✓</span> Usually included</td></tr>
+        <tr><td>Dental/Vision/Hearing</td><td><span class="ex">✗</span> Not included</td><td><span class="check">✓</span> Often included</td></tr>
+        <tr><td>Referrals required</td><td><span class="check">✓</span> No</td><td>Sometimes</td></tr>
+        <tr><td>Best for</td><td>Frequent healthcare users, travelers, those wanting simplicity</td><td>Healthy individuals wanting lower premiums and added benefits</td></tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:16px;font-weight:300;line-height:1.6;">Comparison is for illustrative purposes. Plan details vary by carrier, plan type, and state. Review specific plan details before enrolling.</p>
+  </div>
+</section>
+
+<!-- Enrollment Periods -->
+<section class="med-enroll">
+  <div class="me2-in">
+    <div class="me2-hd r">
+      <div class="lbl" style="justify-content:center;">Enrollment Periods</div>
+      <h2 class="h2 r d2" style="color:var(--text-dark);">When you can enroll —<br>and <em>why timing is critical</em></h2>
+      <p class="r d3" style="color:var(--text-muted);font-size:16px;font-weight:400;line-height:1.78;max-width:580px;margin:14px auto 0;text-align:center;">Missing an enrollment window can result in permanent late enrollment penalties and restricted access to Supplement plans. Call us before you need to enroll — not after.</p>
+    </div>
+    <div class="enroll-grid r d2">
+      <div class="enroll-card">
+        <div class="en-period">Initial Enrollment Period</div>
+        <h3 class="en-name">Turning 65</h3>
+        <div class="en-when">Opens 3 months before your 65th birthday month · Closes 3 months after</div>
+        <p class="en-desc">This is the most protected enrollment window you'll ever have. During IEP, you can enroll in any Medicare plan without medical underwriting — meaning pre-existing conditions cannot affect your eligibility or premium for Supplement plans. This window does not come back.</p>
+        <div class="en-warn">If you miss this window, Medigap carriers can use medical underwriting in most states — meaning you could be charged more or denied coverage based on your health history.</div>
+      </div>
+      <div class="enroll-card">
+        <div class="en-period">Special Enrollment Period</div>
+        <h3 class="en-name">Leaving Employer Coverage</h3>
+        <div class="en-when">Triggered by qualifying life events</div>
+        <p class="en-desc">If you or your spouse had employer-sponsored coverage past 65, you qualify for a Special Enrollment Period when that coverage ends. You have 8 months to enroll in Part B without a late enrollment penalty. Call us as soon as you know your end date — the window is shorter than most people realize.</p>
+        <div class="en-warn">Do not rely on COBRA or a spouse's retiree coverage as a substitute for Medicare enrollment — this can still trigger late enrollment penalties.</div>
+      </div>
+      <div class="enroll-card">
+        <div class="en-period">Annual Enrollment Period</div>
+        <h3 class="en-name">October 15 – December 7</h3>
+        <div class="en-when">Every year — changes effective January 1</div>
+        <p class="en-desc">During AEP, anyone on Medicare can switch Advantage plans, switch from Advantage back to Original Medicare, or change Part D plans. This is why we review every client annually. Formularies change, network restrictions change, and premiums change. The best plan last year may not be the best plan this year.</p>
+      </div>
+      <div class="enroll-card">
+        <div class="en-period">Open Enrollment Period</div>
+        <h3 class="en-name">January 1 – March 31</h3>
+        <div class="en-when">For Medicare Advantage enrollees only</div>
+        <p class="en-desc">If you enrolled in a Medicare Advantage plan during AEP and want to switch plans or return to Original Medicare, you can do so during OEP. This window is for corrections — it's not an alternative to making a careful choice during AEP. Changes made here take effect the first of the following month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="med-faq">
+  <div class="mf-in">
+    <div class="mf-hd r">
+      <div class="lbl" style="justify-content:center;">Common Questions</div>
+      <h2 class="h2 lt r d2">Medicare questions <em>answered directly</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item dk"><button class="faq-q"><span class="faq-qt">How much does it cost to work with a Medicare agent?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">Nothing. Insurance carriers pay agents a commission when a client enrolls. Your monthly premium is identical whether you enroll through us or directly with the carrier. We receive the same commission regardless of which plan we recommend — our incentive is to find you the right plan, not the most expensive one.</div></div></div>
+      <div class="faq-item dk"><button class="faq-q"><span class="faq-qt">How do I know my doctors will still be covered?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">For Medicare Supplement plans, any doctor who accepts Original Medicare is covered — no network check needed. For Medicare Advantage, we verify each of your doctors against the plan's provider directory before recommending that plan. We will never enroll you in an Advantage plan without first confirming your doctors are in-network.</div></div></div>
+      <div class="faq-item dk"><button class="faq-q"><span class="faq-qt">I'm still working at 65 and have employer coverage. What do I do?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">It depends on how many people your employer has. If your employer has 20 or more employees, your group plan is primary and Medicare is secondary — you can delay Medicare enrollment without penalty. If your employer has fewer than 20 employees, Medicare becomes primary and you should enroll. This is a critical distinction. Call us before your 65th birthday and we'll walk through your specific situation.</div></div></div>
+      <div class="faq-item dk"><button class="faq-q"><span class="faq-qt">What's the difference between Plan G and Plan N?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">Both are popular Medigap plans. Plan G covers almost everything Original Medicare doesn't — except the Part B annual deductible. Plan N covers the same but also requires small copayments for some doctor visits ($20 max) and emergency room visits ($50 if not admitted). Plan N typically has a lower monthly premium than Plan G. Whether the premium savings justify the copayments depends on how often you use healthcare. We'll run the numbers for your specific situation.</div></div></div>
+      <div class="faq-item dk"><button class="faq-q"><span class="faq-qt">Can I switch from Medicare Advantage back to Original Medicare?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">Yes — during Annual Enrollment Period (Oct 15–Dec 7) or Open Enrollment Period (Jan 1–Mar 31). However, switching back to Original Medicare and then trying to get a Supplement plan may require medical underwriting outside your Initial Enrollment Period, depending on your state. Some people find they cannot get the Supplement plan they want because of health changes since they first enrolled. This is one reason we encourage clients to make their initial Medicare decision carefully.</div></div></div>
+      <div class="faq-item dk"><button class="faq-q"><span class="faq-qt">What if I have a pre-existing condition?</span><span class="faq-qi">+</span></button><div class="faq-ans"><div class="faq-ans-in">During your Initial Enrollment Period, Medicare Supplement carriers cannot deny you or charge you more based on health conditions. Medicare Advantage plans also cannot deny you based on pre-existing conditions. If you're enrolling outside of a protected window, Medigap medical underwriting may apply in most states — which is why acting during the right enrollment window matters significantly.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="med-cta">
+  <div class="med-cta-bg"></div>
+  <div class="mc3-in">
+    <div class="r lft">
+      <div class="lbl">Free Medicare Review</div>
+      <h2>Getting Medicare right costs<br><em>nothing. Getting it wrong does.</em></h2>
+      <p>A 20-minute call is all it takes. We check your doctors, your prescriptions, and your budget — and we tell you exactly which plan makes sense for your situation. No sales pressure. No obligation.</p>
+    </div>
+    <div class="mc3-right r rgt">
+      <a href="tel:6026800058" class="mc3-ph">602-680-0058</a>
+      <span class="mc3-hrs">Call or text — we answer</span>
+      <a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center;padding:15px;font-size:11px;">Get a Free Review →</a>
+    </div>
+  </div>
+</section>
+
+<script src="js/shared.js"></script>
+</body>
+</html>
