@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Barkman Financial Group</title>
+<meta name="description" content="The story behind Barkman Financial Group. Founded on real care, built on integrity. Phoenix, Arizona. Independent insurance holding company.">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="stylesheet" href="css/main.css">
+<style>
+.about-hero{position:relative;min-height:68vh;display:flex;align-items:flex-end;overflow:hidden;padding:calc(var(--nav-h)+88px) var(--pad) 80px}
+.about-hero-bg{position:absolute;inset:0;background:linear-gradient(rgba(3,8,5,.97),rgba(3,8,5,.97));z-index:0}
+.about-hero-inner{position:relative;z-index:1;max-width:760px}
+.story-section{padding:100px var(--pad);background:var(--cream)}
+.story-section::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.2'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23t)' opacity='0.055'/%3E%3C/svg%3E")}
+.story-section{position:relative}
+.story-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;position:relative;z-index:1}
+.story-img{position:relative}
+.story-img img{width:100%;height:560px;object-fit:cover}
+.story-caption{position:absolute;bottom:-18px;right:-18px;background:var(--forest);border:1px solid rgba(201,168,76,.18);padding:24px 28px;text-align:center}
+.sc-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;display:block}
+.sc-lbl{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(238,243,239,.42);display:block;margin-top:5px}
+.story-body p{font-size:16px;line-height:1.88;color:var(--tx-muted);font-weight:400;margin-bottom:20px}
+.story-body p:last-child{margin-bottom:0}
+.founder-section{background:var(--forest);padding:96px var(--pad);position:relative;overflow:hidden}
+.founder-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.05)0%,transparent 62%);pointer-events:none}
+.founder-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.founder-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.2vw,26px);font-style:italic;line-height:1.78;color:rgba(238,243,239,.72);margin-bottom:36px}
+.founder-quote p{margin-bottom:22px}
+.founder-quote p:last-child{margin-bottom:0}
+.founder-sig{border-top:1px solid rgba(201,168,76,.14);padding-top:26px;display:flex;align-items:center;gap:20px}
+.sig-line{width:44px;height:1px;background:var(--gold)}
+.sig-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold)}
+.sig-title{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(238,243,239,.35);font-weight:600}
+.values-section{background:white;padding:96px var(--pad)}
+.values-inner{max-width:var(--max);margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;background:rgba(12,59,46,.07);margin-top:52px}
+.value-card{background:white;padding:44px 40px;transition:all .3s var(--out);cursor:default}
+.value-card:hover{background:var(--cream);transform:translateY(-4px);box-shadow:0 16px 48px rgba(12,59,46,.09)}
+.vc-num{font-size:8px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+.vc-title{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:var(--tx-dark);margin-bottom:13px}
+.vc-body{font-size:15px;line-height:1.82;color:var(--tx-muted);font-weight:400}
+.about-cta{background:var(--forest);padding:96px var(--pad);text-align:center;position:relative;overflow:hidden}
+.about-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.06)0%,transparent 60%);pointer-events:none}
+.about-cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1}
+@media(max-width:960px){.story-inner{grid-template-columns:1fr;gap:52px}.story-img img{height:360px}.story-caption{display:none}.values-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="top">
+
+<!-- This block is copy-pasted into every page. No JS injection. -->
+<div id="progress-bar" aria-hidden="true"></div>
+<div id="cur-dot"  aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"></div>
+<a href="#top" id="back-top" aria-label="Back to top">&#8593;</a>
+
+<!-- Mobile overlay — display:none until JS adds .open -->
+<div id="mob-overlay" class="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <a href="index.html"    class="mob-link">Home</a>
+  <a href="about.html"    class="mob-link">About</a>
+  <div class="mob-rule"></div>
+  <a href="https://barkmanmedicare.com"     class="mob-link" target="_blank" rel="noopener">Medicare</a>
+  <a href="https://barkmanfinalexpense.com" class="mob-link" target="_blank" rel="noopener">Final Expense</a>
+  <a href="https://barkmanannuities.com"    class="mob-link" target="_blank" rel="noopener">Annuities</a>
+  <a href="https://barkmancommercial.com"   class="mob-link" target="_blank" rel="noopener">Commercial</a>
+  <a href="https://barkmanbenefits.com"     class="mob-link" target="_blank" rel="noopener">Benefits</a>
+  <div class="mob-rule"></div>
+  <a href="careers.html"  class="mob-link">Careers</a>
+  <a href="contact.html"  class="mob-link">Contact</a>
+  <div class="mob-rule"></div>
+  <a href="tel:6026800058" class="mob-phone">602&#8209;680&#8209;0058</a>
+  <div class="mob-cta">
+    <a href="contact.html" class="btn btn-primary">Get a Free Consultation <span class="btn-arrow">&#8594;</span></a>
+  </div>
+</div>
+
+<!-- Primary navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-bg"></div>
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo" aria-label="Barkman Financial Group">
+      <div class="nav-logo-img"><img src="img/logo.png" alt="Barkman Financial Group crest" width="46" height="46" loading="eager"></div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">BARKMAN</span>
+        <span class="nav-logo-sub">Financial Group</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"   class="nav-link">Home</a></li>
+      <li><a href="about.html"   class="nav-link">About</a></li>
+      <li>
+        <button class="nav-link" id="dd-toggle" type="button"
+          aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">
+          Divisions <span class="nav-chevron" aria-hidden="true">&#8250;</span>
+        </button>
+        <ul class="nav-dropdown" id="dd-menu" role="menu">
+          <li><a href="https://barkmanmedicare.com"     role="menuitem" target="_blank" rel="noopener">Barkman Medicare</a></li>
+          <li><a href="https://barkmanfinalexpense.com" role="menuitem" target="_blank" rel="noopener">Barkman Final Expense</a></li>
+          <li><a href="https://barkmanannuities.com"    role="menuitem" target="_blank" rel="noopener">Barkman Annuities</a></li>
+          <li><a href="https://barkmancommercial.com"   role="menuitem" target="_blank" rel="noopener">Barkman Commercial &amp; Cyber</a></li>
+          <li><a href="https://barkmanbenefits.com"     role="menuitem" target="_blank" rel="noopener">Barkman Benefits</a></li>
+        </ul>
+      </li>
+      <li><a href="careers.html" class="nav-link">Careers</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="tel:6026800058" class="nav-phone">602&#8209;680&#8209;0058</a>
+      <a href="contact.html" class="btn-nav">Get Covered</a>
+      <button class="nav-ham" id="nav-ham" type="button"
+        aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-overlay">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<section class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="about-hero-inner">
+    <div class="eyebrow reveal" style="color:var(--gold);">Our Story</div>
+    <h1 class="headline-xl reveal delay-1" style="margin-top:16px;">Built on care.<br><em>Driven by principle.</em></h1>
+    <p class="body-lg light reveal delay-2" style="max-width:560px;margin-top:20px;">Barkman Financial Group was not built to be a company. It was built because families deserve honest guidance &mdash; and because the people who founded it had seen firsthand what happens when they don&rsquo;t get it.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="story-inner">
+    <div class="story-img reveal from-left">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=85&fit=crop" alt="Barkman Financial Group" loading="lazy">
+      <div class="story-caption">
+        <span class="sc-num">2026</span>
+        <span class="sc-lbl">Founded Phoenix, AZ</span>
+      </div>
+    </div>
+    <div class="story-body reveal from-right">
+      <div class="eyebrow" style="margin-bottom:16px;">Who We Are</div>
+      <h2 class="headline-lg" style="color:var(--tx-dark);margin-bottom:22px;">An independent brokerage that answers to <em>you</em></h2>
+      <p>Barkman Financial Group is an independent insurance holding company based in Phoenix, Arizona. We are not a captive agency. We are not tied to any single carrier, quota, or product line. We exist to help families, retirees, and businesses find the right coverage &mdash; and we define &ldquo;right&rdquo; by the client&rsquo;s needs, not by what pays us the most.</p>
+      <p>Through five specialized divisions &mdash; Medicare, Final Expense, Annuities, Commercial &amp; Cyber, and Benefits &mdash; we serve individuals and businesses across more than twenty states. Each division operates with focused expertise and its own dedicated team. All five are held to the same non-negotiable standard.</p>
+      <p>We shop our carrier network and recommend what genuinely fits &mdash; even when that means the simplest, least expensive option on the table. Our only obligation is to the people we serve.</p>
+      <span class="rule-gold" style="margin:28px 0;"></span>
+      <a href="contact.html" class="btn btn-outline" style="border-color:rgba(12,59,46,.3);color:var(--tx-dark);">Start a Conversation &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+  <div class="founder-inner">
+    <div class="eyebrow reveal" style="justify-content:center;margin-bottom:36px;color:var(--gold);">From the Founder</div>
+    <div class="founder-quote reveal delay-1">
+      <p>I did not build Barkman Financial Group to have a company. I built it because I spent years as an EMT, as a caregiver, as a university counselor &mdash; sitting with people at the hardest moments of their lives. I have held the hands of people who had nothing. I have watched families scramble to cover funeral costs for someone they loved because nobody had planned ahead.</p>
+      <p>That is why this company exists. Not to sell policies. To protect families. Those are not the same thing, and most people in this industry have forgotten the difference.</p>
+      <p>If a policy is not right for someone, we do not sell it. If it comes down to a commission or a client&rsquo;s financial security, there is no decision to make. We build this business on what happens after the policy is placed &mdash; on whether the people we worked with are genuinely better protected. That is the only measure of success I care about.</p>
+    </div>
+    <div class="founder-sig reveal delay-2">
+      <div class="sig-line"></div>
+      <div>
+        <div class="sig-name">Barkman Financial Group</div>
+        <div class="sig-title">Founded 2026 &nbsp;&middot;&nbsp; Phoenix, Arizona</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="values-inner">
+    <div class="section-head center">
+      <div class="eyebrow reveal">Our Values</div>
+      <h2 class="headline-lg reveal delay-1" style="color:var(--tx-dark);margin-top:14px;">The principles that guide<br><em>every decision we make</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="vc-num">01 &mdash; Integrity</div>
+        <h3 class="vc-title">We tell the truth, always</h3>
+        <p class="vc-body">Even when it costs us. If a policy is not right for a client, we say so and we walk away. Our reputation is built on what happens after the sale &mdash; not on the sale itself. Every advisor in this organization is held to that standard without exception.</p>
+      </div>
+      <div class="value-card reveal delay-1">
+        <div class="vc-num">02 &mdash; Independence</div>
+        <h3 class="vc-title">We answer to clients, not carriers</h3>
+        <p class="vc-body">Because we work with multiple carriers, we can compare objectively and advocate genuinely. No quota, no preferred carrier, no production bonus influences a recommendation. What we suggest is based entirely on what fits the person in front of us.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="vc-num">03 &mdash; Care</div>
+        <h3 class="vc-title">We actually listen</h3>
+        <p class="vc-body">Before we mention a single product, we understand the person&rsquo;s situation &mdash; their family, their finances, their health, their goals. The people we serve are not policy numbers. We know their names, and we treat every conversation accordingly.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="vc-num">04 &mdash; Commitment</div>
+        <h3 class="vc-title">Our word is our identity</h3>
+        <p class="vc-body">If we say we will call someone back, we call them back. If we say we will find an answer, we find it. If a client has a claim question two years after enrollment, we are still there. Our relationship with every client continues long after the policy is placed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="about-cta-inner">
+    <div class="eyebrow reveal" style="justify-content:center;margin-bottom:20px;">Let&rsquo;s Connect</div>
+    <h2 class="headline-lg light reveal delay-1">Ready to work with someone who puts <em>you first?</em></h2>
+    <p class="body-lg light reveal delay-2" style="margin:18px auto 36px;max-width:480px;">A conversation costs nothing. Twenty minutes is all it takes to know exactly where you stand.</p>
+    <a href="contact.html" class="btn btn-primary reveal delay-3" style="padding:17px 44px;font-size:11px;">Schedule a Free Consultation &#8594;</a>
+  </div>
+</section>
+
+<!-- Footer hardcoded — copy-pasted into every page -->
+<div class="divider"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand-logo" aria-label="Barkman Financial Group">
+          <div class="footer-brand-img"><img src="img/logo.png" alt="Barkman Financial Group" width="46" height="46" loading="lazy"></div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">BARKMAN</span>
+            <span class="nav-logo-sub">Financial Group</span>
+          </div>
+        </a>
+        <p class="footer-brand-tagline">
+          <strong>When coverage matters, it has to be right.</strong>
+          The parent company of Barkman Medicare, Barkman Final Expense, Barkman Annuities, Barkman Commercial &amp; Cyber, and Barkman Benefits. Independent. Licensed in 20+ states. Based in Phoenix, Arizona.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Company</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Divisions</div>
+        <ul>
+          <li><a href="https://barkmanmedicare.com"     target="_blank" rel="noopener">Barkman Medicare</a></li>
+          <li><a href="https://barkmanfinalexpense.com" target="_blank" rel="noopener">Barkman Final Expense</a></li>
+          <li><a href="https://barkmanannuities.com"    target="_blank" rel="noopener">Barkman Annuities</a></li>
+          <li><a href="https://barkmancommercial.com"   target="_blank" rel="noopener">Barkman Commercial &amp; Cyber</a></li>
+          <li><a href="https://barkmanbenefits.com"     target="_blank" rel="noopener">Barkman Benefits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Legal</div>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Contact</div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9742;</i>
+          <span class="footer-contact-text"><a href="tel:6026800058">602&#8209;680&#8209;0058</a></span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9679;</i>
+          <span class="footer-contact-text">Phoenix, Arizona<br>Licensed in 20+ states</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9679;</i>
+          <span class="footer-contact-text">Mon&#8211;Fri 8am&#8211;6pm CST<br>Sat 9am&#8211;2pm CST</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9679;</i>
+          <span class="footer-contact-text">Independent. No cost to you.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-compliance">
+      <p>We do not offer every plan available in your area. Currently we represent a number of organizations which offer a number of products in your area. Please contact <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a>, 1&#8209;800&#8209;MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+      <p>Barkman Financial Group and its affiliated companies are independent insurance agencies and are not affiliated with, connected to, or endorsed by the U.S. government, the Centers for Medicare &amp; Medicaid Services (CMS), or any government agency. Insurance products, availability, and eligibility vary by state. Not all applicants will qualify for coverage. Rates and examples shown on this website are for illustrative purposes only. Actual rates vary based on age, health, location, tobacco use, and other underwriting factors.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Barkman Financial Group. All rights reserved. AZ License #22121594. Licensed insurance professionals.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

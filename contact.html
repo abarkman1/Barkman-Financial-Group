@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Barkman Financial Group</title>
+<meta name="description" content="Get in touch with Barkman Financial Group. Phoenix, Arizona. 602-680-0058. Licensed in 20+ states.">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="stylesheet" href="css/main.css">
+<style>
+.con-hero{min-height:56vh;display:flex;align-items:flex-end;background:linear-gradient(rgba(3,8,5,.97),rgba(3,8,5,.97));padding:calc(var(--nav-h)+72px) var(--pad) 72px;position:relative}
+.con-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 16% 65%,rgba(11,55,40,.42)0%,transparent 52%)}
+.con-hero-inner{position:relative;z-index:1;max-width:680px}
+.con-main{padding:96px var(--pad);background:var(--cream);position:relative}
+.con-main::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.2'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23t)' opacity='0.055'/%3E%3C/svg%3E")}
+.con-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:88px;align-items:start;position:relative;z-index:1}
+.con-info h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,44px);font-weight:600;color:var(--tx-dark);margin-bottom:16px;line-height:1.12}
+.con-info h2 em{font-style:italic;color:var(--forest-lt)}
+.con-info>p{font-size:16px;line-height:1.85;color:var(--tx-muted);font-weight:400;margin-bottom:36px}
+.con-methods{display:flex;flex-direction:column;gap:3px;margin-bottom:40px}
+.con-method{display:flex;align-items:center;gap:18px;padding:20px 24px;background:white;border:1px solid rgba(0,0,0,.06);text-decoration:none;transition:all .25s}
+.con-method:hover{border-color:rgba(12,59,46,.22);transform:translateX(5px)}
+.con-method-icon{width:42px;height:42px;flex-shrink:0;border:1.5px solid rgba(201,168,76,.24);display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .25s;color:var(--gold)}
+.con-method:hover .con-method-icon{background:var(--forest);border-color:var(--forest);color:white}
+.con-method-label{font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tx-muted);font-weight:700;margin-bottom:3px}
+.con-method-value{font-size:15px;font-weight:500;color:var(--tx-dark)}
+.con-promise{background:var(--forest);padding:28px 32px}
+.cp-head{font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:15px}
+.cp-row{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(201,168,76,.08);font-size:14px;color:rgba(238,243,239,.72);font-weight:400;line-height:1.55}
+.cp-row:last-child{border-bottom:none}
+.cp-row::before{content:'&#10003;';color:var(--gold);flex-shrink:0;font-weight:700;font-size:11px;margin-top:2px}
+.con-form-wrap{background:white;padding:52px 48px;box-shadow:0 16px 56px rgba(0,0,0,.09);position:relative;position:sticky;top:calc(var(--nav-h)+20px)}
+.con-form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold),var(--gold-lt))}
+.con-form-wrap h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--tx-dark);margin-bottom:5px}
+.con-form-sub{font-size:13.5px;color:var(--tx-muted);font-weight:400;margin-bottom:28px;line-height:1.5}
+.con-form-sub span{color:var(--gold);font-weight:600}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(--tx-muted);margin-bottom:6px}
+.form-input,.form-select{width:100%;padding:14px 16px;border:1.5px solid rgba(0,0,0,.1);background:var(--cream-mid);font-family:'Jost',sans-serif;font-size:15px;font-weight:400;color:var(--tx-dark);transition:border-color .2s,background .2s;outline:none;appearance:none;-webkit-appearance:none}
+.form-input:focus,.form-select:focus{border-color:var(--forest);background:white}
+.radio-group{display:flex;gap:8px}
+.radio-opt{flex:1;position:relative}
+.radio-opt input{position:absolute;opacity:0;width:0;height:0}
+.radio-opt label{display:flex;align-items:center;justify-content:center;padding:13px 8px;border:1.5px solid rgba(0,0,0,.1);font-size:13px;letter-spacing:.5px;font-weight:500;color:var(--tx-muted);cursor:pointer;transition:all .18s;text-align:center;line-height:1.3}
+.radio-opt input:checked+label{border-color:var(--forest);background:rgba(12,59,46,.06);color:var(--tx-dark)}
+.radio-opt label:hover{border-color:rgba(12,59,46,.26);color:var(--tx-dark)}
+.form-note{font-size:11.5px;color:var(--tx-muted);font-weight:400;line-height:1.65;margin-bottom:18px}
+.form-note a{color:var(--forest);text-decoration:none}
+.form-submit{width:100%;padding:17px;font-size:11px;justify-content:center}
+.form-success{display:none;text-align:center;padding:44px 16px}
+.fs-icon{width:66px;height:66px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 20px;color:var(--gold)}
+.form-success h4{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--tx-dark);margin-bottom:10px}
+.form-success p{font-size:15px;color:var(--tx-muted);font-weight:400;line-height:1.7}
+.form-success a{color:var(--forest)}
+@media(max-width:960px){.con-inner{grid-template-columns:1fr;gap:52px}.con-form-wrap{position:static;padding:36px 28px}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="top">
+<!-- This block is copy-pasted into every page. No JS injection. -->
+<div id="progress-bar" aria-hidden="true"></div>
+<div id="cur-dot"  aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"></div>
+<a href="#top" id="back-top" aria-label="Back to top">&#8593;</a>
+
+<!-- Mobile overlay — display:none until JS adds .open -->
+<div id="mob-overlay" class="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <a href="index.html"    class="mob-link">Home</a>
+  <a href="about.html"    class="mob-link">About</a>
+  <div class="mob-rule"></div>
+  <a href="https://barkmanmedicare.com"     class="mob-link" target="_blank" rel="noopener">Medicare</a>
+  <a href="https://barkmanfinalexpense.com" class="mob-link" target="_blank" rel="noopener">Final Expense</a>
+  <a href="https://barkmanannuities.com"    class="mob-link" target="_blank" rel="noopener">Annuities</a>
+  <a href="https://barkmancommercial.com"   class="mob-link" target="_blank" rel="noopener">Commercial</a>
+  <a href="https://barkmanbenefits.com"     class="mob-link" target="_blank" rel="noopener">Benefits</a>
+  <div class="mob-rule"></div>
+  <a href="careers.html"  class="mob-link">Careers</a>
+  <a href="contact.html"  class="mob-link">Contact</a>
+  <div class="mob-rule"></div>
+  <a href="tel:6026800058" class="mob-phone">602&#8209;680&#8209;0058</a>
+  <div class="mob-cta">
+    <a href="contact.html" class="btn btn-primary">Get a Free Consultation <span class="btn-arrow">&#8594;</span></a>
+  </div>
+</div>
+
+<!-- Primary navigation -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-bg"></div>
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo" aria-label="Barkman Financial Group">
+      <div class="nav-logo-img"><img src="img/logo.png" alt="Barkman Financial Group crest" width="46" height="46" loading="eager"></div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">BARKMAN</span>
+        <span class="nav-logo-sub">Financial Group</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"   class="nav-link">Home</a></li>
+      <li><a href="about.html"   class="nav-link">About</a></li>
+      <li>
+        <button class="nav-link" id="dd-toggle" type="button"
+          aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">
+          Divisions <span class="nav-chevron" aria-hidden="true">&#8250;</span>
+        </button>
+        <ul class="nav-dropdown" id="dd-menu" role="menu">
+          <li><a href="https://barkmanmedicare.com"     role="menuitem" target="_blank" rel="noopener">Barkman Medicare</a></li>
+          <li><a href="https://barkmanfinalexpense.com" role="menuitem" target="_blank" rel="noopener">Barkman Final Expense</a></li>
+          <li><a href="https://barkmanannuities.com"    role="menuitem" target="_blank" rel="noopener">Barkman Annuities</a></li>
+          <li><a href="https://barkmancommercial.com"   role="menuitem" target="_blank" rel="noopener">Barkman Commercial &amp; Cyber</a></li>
+          <li><a href="https://barkmanbenefits.com"     role="menuitem" target="_blank" rel="noopener">Barkman Benefits</a></li>
+        </ul>
+      </li>
+      <li><a href="careers.html" class="nav-link">Careers</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="tel:6026800058" class="nav-phone">602&#8209;680&#8209;0058</a>
+      <a href="contact.html" class="btn-nav">Get Covered</a>
+      <button class="nav-ham" id="nav-ham" type="button"
+        aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob-overlay">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<section class="con-hero">
+  <div class="con-hero-inner">
+    <div class="eyebrow reveal" style="color:var(--gold);">Free Consultation</div>
+    <h1 class="headline-xl reveal delay-1" style="margin-top:16px;">Let&rsquo;s find the right<br><em>coverage for you.</em></h1>
+    <p class="body-lg light reveal delay-2" style="margin-top:18px;max-width:520px;">A licensed advisor will reach out within one business day &mdash; usually within hours. No sales pitch. No pressure. Just clear answers to your questions.</p>
+  </div>
+</section>
+
+<section class="con-main">
+  <div class="con-inner">
+    <div class="reveal from-left">
+      <div class="eyebrow" style="margin-bottom:16px;">Get in Touch</div>
+      <h2>Real people.<br><em>Straight answers.</em></h2>
+      <p>When you contact Barkman Financial Group, you reach a licensed advisor directly. Someone who will take the time to understand your situation before mentioning a single product.</p>
+      <div class="con-methods">
+        <a href="tel:6026800058" class="con-method">
+          <div class="con-method-icon">&#9742;</div>
+          <div><div class="con-method-label">Call or Text</div><div class="con-method-value">602&#8209;680&#8209;0058</div></div>
+        </a>
+        <div class="con-method" style="cursor:default;">
+          <div class="con-method-icon">&#9679;</div>
+          <div><div class="con-method-label">Hours</div><div class="con-method-value" style="font-size:14px;">Mon&ndash;Fri 8am&ndash;6pm &nbsp;&middot;&nbsp; Sat 9am&ndash;2pm CST</div></div>
+        </div>
+        <div class="con-method" style="cursor:default;">
+          <div class="con-method-icon">&#9679;</div>
+          <div><div class="con-method-label">Location</div><div class="con-method-value" style="font-size:14px;">Phoenix, Arizona &nbsp;&middot;&nbsp; Licensed in 20+ states</div></div>
+        </div>
+      </div>
+      <div class="con-promise">
+        <div class="cp-head">Our promise</div>
+        <div class="cp-row">No fees &mdash; ever. Our guidance is completely free to you.</div>
+        <div class="cp-row">No pressure. You will never be rushed toward a decision.</div>
+        <div class="cp-row">Your information is never sold or shared with third parties.</div>
+        <div class="cp-row">We respond within one business day &mdash; usually same day.</div>
+      </div>
+    </div>
+
+    <div class="reveal from-right delay-1">
+      <div class="con-form-wrap">
+        <h3>Get a Free Consultation</h3>
+        <p class="con-form-sub">Takes about <span>2 minutes.</span> No commitment required.</p>
+        <!-- Replace YOUR_FORM_ID at formspree.io before launch -->
+        <!-- Form routes to leads@barkmanfinancialgroup.com via Formspree -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="cfn">First Name</label><input class="form-input" type="text" id="cfn" name="firstName" placeholder="Jane" required></div>
+            <div class="form-group"><label class="form-label" for="cph">Phone</label><input class="form-input" type="tel" id="cph" name="phone" placeholder="(602) 000-0000" required></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="czp">ZIP Code</label><input class="form-input" type="text" id="czp" name="zip" placeholder="85001" maxlength="10"></div>
+          <div class="form-group">
+            <label class="form-label">Are you turning 65 within the next 12 months?</label>
+            <div class="radio-group">
+              <div class="radio-opt"><input type="radio" id="r65y" name="turning65" value="Yes"><label for="r65y">Yes</label></div>
+              <div class="radio-opt"><input type="radio" id="r65n" name="turning65" value="No"><label for="r65n">No</label></div>
+              <div class="radio-opt"><input type="radio" id="r65m" name="turning65" value="Already on Medicare"><label for="r65m">Already on Medicare</label></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cint">I&rsquo;m most interested in</label>
+            <select class="form-select" id="cint" name="interest">
+              <option value="">Select one (optional)</option>
+              <option>Medicare Plans</option>
+              <option>Final Expense Insurance</option>
+              <option>Term Life Insurance</option>
+              <option>Annuities</option>
+              <option>Supplemental Coverage</option>
+              <option>Commercial or Business Insurance</option>
+              <option>Employee Benefits</option>
+              <option>Not sure &mdash; I need guidance</option>
+            </select>
+          </div>
+          <p class="form-note">By submitting, you agree to be contacted by a licensed Barkman Financial Group advisor. Your information is kept confidential and never sold. <a href="privacy.html">Privacy Policy</a>.</p>
+          <button type="submit" class="btn btn-primary form-submit">Get My Free Consultation &#8594;</button>
+        </form>
+        <div class="form-success" id="conSuccess">
+          <div class="fs-icon">&#10003;</div>
+          <h4>You&rsquo;re all set.</h4>
+          <p>A licensed advisor will reach out within one business day &mdash; usually within hours. In the meantime, learn more <a href="about.html">about us</a> or explore our <a href="index.html#divisions">divisions</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer hardcoded — copy-pasted into every page -->
+<div class="divider"></div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand-logo" aria-label="Barkman Financial Group">
+          <div class="footer-brand-img"><img src="img/logo.png" alt="Barkman Financial Group" width="46" height="46" loading="lazy"></div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">BARKMAN</span>
+            <span class="nav-logo-sub">Financial Group</span>
+          </div>
+        </a>
+        <p class="footer-brand-tagline">
+          <strong>When coverage matters, it has to be right.</strong>
+          The parent company of Barkman Medicare, Barkman Final Expense, Barkman Annuities, Barkman Commercial &amp; Cyber, and Barkman Benefits. Independent. Licensed in 20+ states. Based in Phoenix, Arizona.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Company</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Divisions</div>
+        <ul>
+          <li><a href="https://barkmanmedicare.com"     target="_blank" rel="noopener">Barkman Medicare</a></li>
+          <li><a href="https://barkmanfinalexpense.com" target="_blank" rel="noopener">Barkman Final Expense</a></li>
+          <li><a href="https://barkmanannuities.com"    target="_blank" rel="noopener">Barkman Annuities</a></li>
+          <li><a href="https://barkmancommercial.com"   target="_blank" rel="noopener">Barkman Commercial &amp; Cyber</a></li>
+          <li><a href="https://barkmanbenefits.com"     target="_blank" rel="noopener">Barkman Benefits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Legal</div>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-head">Contact</div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9742;</i>
+          <span class="footer-contact-text"><a href="tel:6026800058">602&#8209;680&#8209;0058</a></span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9679;</i>
+          <span class="footer-contact-text">Phoenix, Arizona<br>Licensed in 20+ states</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9679;</i>
+          <span class="footer-contact-text">Mon&#8211;Fri 8am&#8211;6pm CST<br>Sat 9am&#8211;2pm CST</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="footer-contact-icon">&#9679;</i>
+          <span class="footer-contact-text">Independent. No cost to you.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-compliance">
+      <p>We do not offer every plan available in your area. Currently we represent a number of organizations which offer a number of products in your area. Please contact <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a>, 1&#8209;800&#8209;MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+      <p>Barkman Financial Group and its affiliated companies are independent insurance agencies and are not affiliated with, connected to, or endorsed by the U.S. government, the Centers for Medicare &amp; Medicaid Services (CMS), or any government agency. Insurance products, availability, and eligibility vary by state. Not all applicants will qualify for coverage. Rates and examples shown on this website are for illustrative purposes only. Actual rates vary based on age, health, location, tobacco use, and other underwriting factors.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Barkman Financial Group. All rights reserved. AZ License #22121594. Licensed insurance professionals.</p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.form-submit');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  try {
+    const res = await fetch(this.action, {method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+    if (res.ok) {
+      this.style.opacity='0'; this.style.transition='opacity .4s';
+      setTimeout(()=>{
+        this.style.display='none';
+        const s=document.getElementById('conSuccess');
+        s.style.display='block'; s.style.opacity='0';
+        setTimeout(()=>{s.style.opacity='1';s.style.transition='opacity .4s';},30);
+      },400);
+    } else { btn.textContent='Error — please call 602-680-0058'; btn.disabled=false; }
+  } catch(err) { btn.textContent='Error — please call 602-680-0058'; btn.disabled=false; }
+});
+</script>
+</body>
+</html>
