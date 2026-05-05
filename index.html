@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barkman Financial Group &mdash; When Coverage Matters, It Has to Be Right</title>
+<meta name="description" content="Barkman Financial Group is an independent insurance holding company with five specialized divisions. Phoenix, Arizona. Licensed in 20+ states.">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===========================================
+   RESET
+=========================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:'Jost',sans-serif;background:#0B3728;color:#2A3830;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ===========================================
+   TOKENS
+=========================================== */
+:root{
+  --forest:    #0B3728;
+  --forest-d:  #071F17;
+  --forest-m:  #124438;
+  --forest-l:  #1A5C45;
+  --gold:      #C9A84C;
+  --gold-l:    #E2C875;
+  --gold-d:    #967A30;
+  --cream:     #F5EDE0;
+  --cream-m:   #EDE3CF;
+  --white:     #FAFAF6;
+  --tx-dk:     #141C16;
+  --tx-bd:     #2A3830;
+  --tx-mt:     #4E6055;
+  --tx-lt:     #EEF3EF;
+  --tx-dm:     rgba(238,243,239,0.72);
+  --tx-xd:     rgba(238,243,239,0.42);
+  --nav-h:     78px;
+  --max:       1380px;
+  --pad:       clamp(22px,5.5vw,80px);
+}
+
+/* ===========================================
+   PROGRESS BAR
+=========================================== */
+#pb{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold-d),var(--gold),var(--gold-l));z-index:9999;pointer-events:none;transition:width .08s linear}
+
+/* ===========================================
+   CURSOR
+=========================================== */
+#cd,#cr{position:fixed;border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+#cd{width:5px;height:5px;background:var(--gold)}
+#cr{width:32px;height:32px;border:1px solid rgba(201,168,76,0.5);transition:width .3s cubic-bezier(0.16,1,0.3,1),height .3s cubic-bezier(0.16,1,0.3,1),background .2s,border-color .2s}
+#cr.h{width:54px;height:54px;border-color:var(--gold);background:rgba(201,168,76,0.07)}
+#cr.p{width:18px;height:18px;background:rgba(201,168,76,0.2)}
+@media(hover:none),(pointer:coarse){#cd,#cr{display:none}}
+
+/* ===========================================
+   NAV
+=========================================== */
+#nav{position:fixed;top:0;left:0;width:100%;height:var(--nav-h);z-index:1000}
+#nav-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(3,12,8,0.85) 0%,transparent 100%);
+  transition:background .5s ease,border-bottom .5s,box-shadow .5s;
+  border-bottom:1px solid transparent;
+}
+#nav.solid #nav-bg{
+  background:rgba(5,24,15,0.97);
+  backdrop-filter:blur(24px) saturate(200%);
+  -webkit-backdrop-filter:blur(24px) saturate(200%);
+  border-bottom-color:rgba(201,168,76,0.12);
+  box-shadow:0 2px 48px rgba(0,0,0,0.55);
+}
+/* Mobile always solid */
+@media(max-width:860px){
+  #nav-bg{
+    background:rgba(5,24,15,0.97) !important;
+    border-bottom-color:rgba(201,168,76,0.12) !important;
+    box-shadow:0 2px 32px rgba(0,0,0,0.45) !important;
+  }
+}
+.nav-wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;height:100%;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:20px}
+
+/* Logo */
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo img{width:44px;height:44px;object-fit:contain;transition:transform .5s cubic-bezier(0.34,1.56,0.64,1)}
+.logo:hover img{transform:rotate(8deg) scale(1.1)}
+.logo-t .ln{display:block;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--tx-lt)}
+.logo-t .ls{display:block;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:2px}
+
+/* Links */
+.nav-links{display:flex;align-items:center;list-style:none;margin:0}
+.nav-links li{position:relative}
+.nl,.nl-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:10px 13px;font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(238,243,239,0.55);background:none;border:none;
+  cursor:pointer;white-space:nowrap;position:relative;transition:color .2s;
+}
+.nl::after,.nl-btn::after{
+  content:'';position:absolute;bottom:6px;left:13px;right:13px;
+  height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .28s cubic-bezier(0.16,1,0.3,1);
+}
+.nl:hover,.nl-btn:hover,.nl.on,.nl-btn.on{color:var(--tx-lt)}
+.nl:hover::after,.nl-btn:hover::after,.nl.on::after,.nl-btn.on::after{transform:scaleX(1)}
+.chev{font-size:8px;display:inline-block;transition:transform .22s}
+.nl-btn[aria-expanded="true"] .chev{transform:rotate(90deg)}
+
+/* Dropdown */
+.dd{
+  display:none;
+  position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  min-width:248px;list-style:none;
+  background:rgba(3,14,9,0.99);
+  border:1px solid rgba(201,168,76,0.16);
+  border-top:2px solid var(--gold);
+  padding:10px 0;
+  box-shadow:0 28px 80px rgba(0,0,0,0.9);
+  z-index:9997;
+}
+.dd.open{display:block;animation:ddopen .15s ease both}
+@keyframes ddopen{from{opacity:0;transform:translateX(-50%) translateY(8px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.dd a{display:block;padding:13px 26px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(238,243,239,0.48);transition:color .15s,padding-left .18s,background .15s}
+.dd a:hover{color:var(--gold-l);padding-left:34px;background:rgba(201,168,76,0.06)}
+
+/* Right side */
+.nav-r{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.nav-tel{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.5px;white-space:nowrap;transition:color .2s}
+.nav-tel:hover{color:var(--gold-l)}
+.nav-cta{
+  font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  background:linear-gradient(110deg,var(--gold-d),var(--gold) 55%,var(--gold-l));
+  background-size:200% 100%;background-position:100%;
+  color:var(--forest-d);padding:11px 22px;border:none;
+  transition:background-position .4s,transform .25s,box-shadow .25s;
+  box-shadow:0 3px 18px rgba(201,168,76,0.25);
+}
+.nav-cta:hover{background-position:0;transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.4)}
+
+/* Hamburger */
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:5px;flex-shrink:0}
+.ham span{display:block;height:1.5px;background:var(--gold);transition:all .35s cubic-bezier(0.16,1,0.3,1);transform-origin:center}
+.ham span:nth-child(1){width:22px}
+.ham span:nth-child(2){width:14px;margin-left:8px}
+.ham span:nth-child(3){width:22px}
+.ham.open span:nth-child(1){transform:rotate(45deg) translateY(4.5px);width:22px}
+.ham.open span:nth-child(2){opacity:0;width:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translateY(-4.5px)}
+
+/* Mobile nav */
+.mnav{
+  display:none;position:fixed;inset:0;z-index:980;
+  background:var(--forest-d);
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:80px 24px 40px;overflow-y:auto;
+}
+.mnav.open{display:flex;animation:mopen .3s ease both}
+@keyframes mopen{from{opacity:0}to{opacity:1}}
+.ml{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,6vw,46px);font-weight:600;color:rgba(238,243,239,0.35);letter-spacing:2px;padding:7px 0;transition:color .2s,transform .2s}
+.ml:hover{color:var(--gold);transform:translateX(8px)}
+.mnav.open .ml{animation:mlin .45s cubic-bezier(0.16,1,0.3,1) both}
+.mnav.open .ml:nth-child(1){animation-delay:.04s}.mnav.open .ml:nth-child(2){animation-delay:.08s}
+.mnav.open .ml:nth-child(3){animation-delay:.12s}.mnav.open .ml:nth-child(4){animation-delay:.16s}
+.mnav.open .ml:nth-child(5){animation-delay:.20s}.mnav.open .ml:nth-child(6){animation-delay:.24s}
+.mnav.open .ml:nth-child(7){animation-delay:.28s}.mnav.open .ml:nth-child(8){animation-delay:.32s}
+.mnav.open .ml:nth-child(9){animation-delay:.36s}
+@keyframes mlin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.mrule{width:36px;height:1px;background:rgba(201,168,76,0.18);margin:12px 0}
+.mtel{color:var(--gold);font-size:clamp(18px,4vw,26px);font-weight:600;margin-top:6px;animation:mlin .45s .40s cubic-bezier(0.16,1,0.3,1) both}
+.mcta{margin-top:20px;animation:mlin .45s .45s cubic-bezier(0.16,1,0.3,1) both}
+
+/* ===========================================
+   BUTTONS
+=========================================== */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Jost',sans-serif;font-weight:700;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:transform .3s cubic-bezier(0.16,1,0.3,1),box-shadow .3s,background-position .4s}
+.ba{display:inline-block;transition:transform .3s cubic-bezier(0.16,1,0.3,1)}
+.btn:hover .ba{transform:translateX(5px)}
+.btn-g{background:linear-gradient(110deg,var(--gold-d),var(--gold) 55%,var(--gold-l));background-size:220% 100%;background-position:100%;color:var(--forest-d);padding:17px 44px;box-shadow:0 4px 22px rgba(201,168,76,0.28)}
+.btn-g:hover{background-position:0;transform:translateY(-3px);box-shadow:0 14px 48px rgba(201,168,76,0.44)}
+.btn-o{background:transparent;border:1.5px solid rgba(201,168,76,0.38);color:var(--tx-lt);padding:16px 42px}
+.btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,0.07);transform:translateY(-3px);color:var(--gold-l)}
+
+/* ===========================================
+   HERO
+   NO reveal class. Always visible.
+   CSS @keyframes only. Zero JS dependency.
+=========================================== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--forest-d)}
+
+/* Background photo */
+.hero-photo{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=90&fit=crop&crop=center') center/cover no-repeat;
+  transform:scale(1.05);
+  animation:hzoom 18s ease-in-out infinite alternate;
+}
+@keyframes hzoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+.hero-photo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,
+    rgba(3,12,8,0.97) 0%,
+    rgba(3,12,8,0.92) 30%,
+    rgba(3,12,8,0.72) 55%,
+    rgba(3,12,8,0.28) 100%
+  );
+}
+.hero-photo::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at 4% 68%,rgba(11,55,40,0.55) 0%,transparent 54%);
+}
+
+/* Decorative gold line */
+.hero-line{
+  position:absolute;left:var(--pad);top:0;bottom:0;
+  width:1px;
+  background:linear-gradient(to bottom,transparent 0%,rgba(201,168,76,0.25) 20%,rgba(201,168,76,0.25) 80%,transparent 100%);
+  z-index:2;pointer-events:none;
+}
+
+/* Crest watermark */
+.hero-crest{
+  position:absolute;right:4%;top:50%;transform:translateY(-50%);
+  width:min(34vw,480px);height:min(34vw,480px);
+  background:url('img/logo.png') center/contain no-repeat;
+  opacity:0.038;filter:brightness(14);pointer-events:none;z-index:2;
+  animation:crest 24s ease-in-out infinite;
+}
+@keyframes crest{0%,100%{transform:translateY(-50%) rotate(0deg)}50%{transform:translateY(-52%) rotate(2deg)}}
+
+.hero-inner{
+  position:relative;z-index:3;
+  max-width:var(--max);margin:0 auto;width:100%;
+  padding:calc(var(--nav-h) + 88px) var(--pad) 100px;
+  display:grid;grid-template-columns:1fr 420px;gap:72px;align-items:center;
+}
+
+/* LEFT  -  all animated with CSS, visible immediately */
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:8.5px;font-weight:700;letter-spacing:5.5px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:28px;
+  animation:up .8s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-eyebrow span{display:block;width:32px;height:1px;background:currentColor}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+h1.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(46px,6.2vw,92px);
+  font-weight:700;line-height:1.03;
+  color:var(--tx-lt);letter-spacing:-0.5px;
+  animation:up .9s .08s cubic-bezier(0.16,1,0.3,1) both;
+}
+h1.hero-h1 em{font-style:italic;color:var(--gold-l);display:block}
+
+.hero-rule{
+  display:block;width:56px;height:2px;
+  background:linear-gradient(90deg,var(--gold-d),var(--gold));
+  margin:30px 0;
+  animation:up .9s .16s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-body{
+  font-size:clamp(15px,1.7vw,17.5px);line-height:1.88;
+  color:rgba(238,243,239,0.78);font-weight:400;
+  max-width:520px;
+  animation:up .9s .22s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-indep{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:22px;padding:11px 20px;
+  background:rgba(11,55,40,0.55);
+  border:1px solid rgba(201,168,76,0.22);
+  font-size:12.5px;color:rgba(238,243,239,0.85);font-weight:500;
+  animation:up .9s .28s cubic-bezier(0.16,1,0.3,1) both;
+}
+.check{color:var(--gold);font-weight:700}
+.hero-trust{
+  display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:14px;
+  animation:up .9s .33s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-trust span{font-size:12.5px;color:rgba(238,243,239,0.68);font-weight:500}
+.hero-actions{
+  display:flex;gap:14px;flex-wrap:wrap;margin-top:38px;
+  animation:up .9s .40s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* RIGHT CARD  -  always visible, CSS animation */
+.hcard{
+  background:rgba(3,10,6,0.93);
+  border:1px solid rgba(201,168,76,0.2);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  padding:44px 40px;position:relative;
+  animation:up .9s .22s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hcard-top{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-d),var(--gold),var(--gold-l))}
+.hcard-lbl{
+  font-size:8px;letter-spacing:4.5px;text-transform:uppercase;
+  font-weight:700;color:var(--gold);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.hcard-lbl::after{content:'';flex:1;height:1px;background:rgba(201,168,76,0.18)}
+.hcard-tel{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:44px;font-weight:700;color:var(--gold);
+  letter-spacing:1px;line-height:1;margin-bottom:6px;transition:color .2s;
+}
+.hcard-tel:hover{color:var(--gold-l)}
+.hcard-hrs{font-size:12px;color:rgba(238,243,239,0.38);font-weight:400;margin-bottom:28px}
+.hcard-sep{height:1px;background:rgba(201,168,76,0.1);margin-bottom:28px}
+.hcard-btn{width:100%;justify-content:center;padding:16px;font-size:10px;margin-bottom:16px}
+.hcard-trust{display:flex;justify-content:center}
+.hcard-trust span{font-size:11px;color:rgba(238,243,239,0.36);padding:0 12px;border-right:1px solid rgba(201,168,76,0.08)}
+.hcard-trust span:last-child{border-right:none}
+
+/* Scroll indicator */
+.scroll-ind{
+  position:absolute;bottom:40px;left:var(--pad);z-index:3;
+  display:flex;align-items:center;gap:12px;
+  animation:up .9s .6s cubic-bezier(0.16,1,0.3,1) both;
+}
+.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,transparent,rgba(201,168,76,0.5));position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;inset:0;background:var(--gold);animation:scrollpulse 2.4s ease-in-out infinite;transform:translateY(-100%)}
+@keyframes scrollpulse{0%{transform:translateY(-100%)}50%{transform:translateY(0)}100%{transform:translateY(100%);opacity:0}}
+.scroll-lbl{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(238,243,239,0.22);writing-mode:vertical-rl}
+
+/* ===========================================
+   STATS  -  cream band
+=========================================== */
+.stats{background:var(--cream-m)}
+.stats-wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:flex}
+.stat-item{flex:1;text-align:center;padding:30px 12px;border-right:1px solid rgba(0,0,0,0.08);cursor:default;transition:background .25s}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:rgba(11,55,40,0.06)}
+.stat-n{display:block;font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:var(--forest);line-height:1}
+.stat-l{display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tx-mt);margin-top:5px;font-weight:700}
+
+/* ===========================================
+   SHARED SECTION STYLES
+=========================================== */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:8.5px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before,.eyebrow::after{content:'';flex-shrink:0;width:22px;height:1px;background:currentColor}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,58px);font-weight:600;line-height:1.08;color:var(--tx-dk)}
+.section-title em{font-style:italic;color:var(--forest-l)}
+.section-title.lt{color:var(--tx-lt)}
+.section-title.lt em{color:var(--gold-l)}
+.section-body{font-size:16px;line-height:1.87;color:var(--tx-mt);font-weight:400}
+.section-body.lt{color:var(--tx-dm)}
+.gold-bar{display:block;width:52px;height:2px;background:linear-gradient(90deg,var(--gold-d),var(--gold));margin:24px 0}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.2),transparent)}
+
+/* ===========================================
+   WHO WE ARE  -  white, asymmetric
+=========================================== */
+.who{background:var(--white);padding:100px var(--pad)}
+.who-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.who-body .eyebrow{margin-bottom:18px}
+.who-body .section-title{margin-bottom:24px}
+.who-body .section-body{margin-bottom:20px}
+.pillars{margin-top:32px;border-top:1px solid rgba(0,0,0,0.06)}
+.pillar{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:14.5px;color:var(--tx-mt);line-height:1.7;font-weight:400}
+.pillar:last-child{border-bottom:none}
+.pillar strong{color:var(--tx-dk);font-weight:600}
+.p-dot{color:var(--gold);flex-shrink:0;margin-top:7px;font-size:7px}
+.who-cta{margin-top:36px}
+
+.who-visual{position:relative;padding:0 0 24px 0}
+.who-img-frame{
+  position:relative;overflow:hidden;
+  height:560px;
+}
+.who-img-frame::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold-d),var(--gold));z-index:2;
+}
+.who-img-frame img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+.who-img-frame:hover img{transform:scale(1.04)}
+.who-stat-badge{
+  position:absolute;bottom:-24px;right:-24px;
+  background:var(--forest);border:1px solid rgba(201,168,76,0.2);
+  padding:26px 30px;text-align:center;min-width:120px;
+}
+.wsb-n{display:block;font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1}
+.wsb-l{display:block;font-size:8.5px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(238,243,239,0.38);margin-top:6px}
+
+/* ===========================================
+   DIVISIONS  -  cream textured
+=========================================== */
+.divs{
+  background-color:var(--cream);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23t)' opacity='0.055'/%3E%3C/svg%3E");
+  padding:100px var(--pad);
+}
+.divs-inner{max-width:var(--max);margin:0 auto}
+.divs-head{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:64px}
+.divs-head .section-title{margin-top:14px}
+.divs-intro{font-size:16px;line-height:1.87;color:var(--tx-mt);max-width:480px;font-weight:400}
+
+/* 5-division grid */
+.div-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(11,55,40,0.09)}
+.div-card{
+  background:var(--white);padding:46px 36px;
+  display:block;text-decoration:none;
+  position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(0.16,1,0.3,1),box-shadow .4s,background .3s;
+  border-bottom:2px solid transparent;
+}
+.div-card:hover{transform:translateY(-7px);box-shadow:0 24px 64px rgba(11,55,40,0.13);background:white;border-bottom-color:var(--gold)}
+.div-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;font-weight:700;color:rgba(11,55,40,0.055);
+  line-height:.9;margin-bottom:8px;
+  transition:color .35s;
+}
+.div-card:hover .div-n{color:rgba(11,55,40,0.09)}
+.div-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--tx-dk);margin-bottom:14px;line-height:1.15}
+.div-desc{font-size:14px;line-height:1.82;color:var(--tx-mt);font-weight:400;margin-bottom:24px}
+.div-more{
+  display:flex;align-items:center;gap:8px;
+  font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;
+  color:var(--forest);transition:gap .25s,color .2s;
+}
+.div-card:hover .div-more{gap:16px;color:var(--gold-d)}
+
+/* Quote card fills 6th slot */
+.div-quote-card{
+  background:var(--forest);padding:46px 36px;
+  display:flex;align-items:center;justify-content:center;
+}
+.div-qinner{text-align:center}
+.div-qmark{font-family:'Cormorant Garamond',serif;font-size:96px;line-height:.4;color:rgba(201,168,76,0.12);display:block;margin-bottom:20px}
+.div-qtext{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;line-height:1.7;color:rgba(238,243,239,0.55);margin-bottom:22px}
+.div-qsrc{font-size:8.5px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* ===========================================
+   PROOF  -  dark forest band
+=========================================== */
+.proof{background:var(--forest-d);padding:100px var(--pad);position:relative;overflow:hidden}
+.proof::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(201,168,76,0.07) 0%,transparent 60%);pointer-events:none}
+.proof-inner{max-width:var(--max);margin:0 auto;position:relative;z-index:1}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(201,168,76,0.06);margin-top:60px}
+.proof-item{background:rgba(255,255,255,0.025);padding:44px 40px;border-bottom:1px solid rgba(201,168,76,0.06)}
+.proof-item:nth-child(odd){border-right:1px solid rgba(201,168,76,0.06)}
+.pi-icon{
+  width:48px;height:48px;border:1px solid rgba(201,168,76,0.22);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:700;color:var(--gold);
+}
+.pi-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--tx-lt);margin-bottom:12px;line-height:1.2}
+.pi-body{font-size:14.5px;line-height:1.80;color:var(--tx-dm);font-weight:400}
+
+/* ===========================================
+   INDEPENDENT  -  asymmetric, white
+=========================================== */
+.indep{background:var(--white);padding:100px var(--pad)}
+.indep-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(11,55,40,0.08)}
+.compare-col{background:var(--white);padding:30px 26px}
+.compare-col.active{background:var(--forest);padding:36px 26px}
+.cc-head{font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,0.18)}
+.cc-row{padding:10px 0;border-bottom:1px solid rgba(11,55,40,0.06);font-size:13.5px;color:var(--tx-mt);line-height:1.5;font-weight:400}
+.compare-col.active .cc-row{border-bottom-color:rgba(201,168,76,0.08);color:var(--tx-dm)}
+.compare-col.active .cc-row.yes{color:rgba(238,243,239,0.9)}
+.cc-row:last-child{border-bottom:none}
+
+/* ===========================================
+   CARRIERS  -  cream
+=========================================== */
+.carriers{
+  background-color:var(--cream-m);padding:56px var(--pad);
+  border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.carriers-inner{max-width:var(--max);margin:0 auto;text-align:center}
+.carriers-lbl{font-size:8.5px;letter-spacing:4.5px;text-transform:uppercase;color:var(--tx-mt);font-weight:700;margin-bottom:30px}
+.carriers-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 36px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(42,56,48,0.28)}
+.carriers-row span{transition:color .25s;cursor:default}
+.carriers-row span:hover{color:var(--forest)}
+.cdot{color:var(--gold);font-size:7px}
+
+/* ===========================================
+   FINAL CTA  -  full bleed dark
+=========================================== */
+.finalcta{position:relative;overflow:hidden;padding:120px var(--pad)}
+.finalcta-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(3,12,8,0.93),rgba(3,12,8,0.93)),
+    url('https://images.unsplash.com/photo-1444628838545-ac4016a5418a?w=1800&q=85&fit=crop')
+    center/cover;
+}
+.finalcta-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(11,55,40,0.52) 0%,transparent 60%)}
+.finalcta-inner{
+  position:relative;z-index:1;
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:80px;
+}
+.finalcta-left .eyebrow{margin-bottom:20px}
+.finalcta-left .section-title{margin-top:0;margin-bottom:16px}
+.finalcta-left .section-body{max-width:460px}
+.finalcta-right{text-align:center;flex-shrink:0;min-width:300px}
+.cta-tel{display:block;font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--gold);letter-spacing:1px;line-height:1;margin-bottom:8px;transition:color .2s}
+.cta-tel:hover{color:var(--gold-l)}
+.cta-hrs{display:block;font-size:9.5px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(238,243,239,0.32);margin-bottom:24px}
+.cta-btn{width:100%;justify-content:center;padding:18px;font-size:11px}
+
+/* ===========================================
+   FOOTER
+=========================================== */
+footer{background:var(--forest-d);border-top:1px solid rgba(201,168,76,0.08);padding:88px var(--pad) 44px}
+.ft{max-width:var(--max);margin:0 auto}
+.ft-top{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr 1.6fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(201,168,76,0.07);margin-bottom:36px}
+.ft-logo-wrap{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px}
+.ft-logo-wrap img{width:44px;height:44px;object-fit:contain}
+.ft-tag{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;line-height:1.88;color:rgba(238,243,239,0.35);max-width:280px}
+.ft-tag strong{display:block;font-family:'Jost',sans-serif;font-style:normal;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin-bottom:8px}
+.ft-col-h{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:20px}
+.ft-col ul{list-style:none}
+.ft-col li{margin-bottom:10px}
+.ft-col a{color:rgba(238,243,239,0.28);font-size:13px;font-weight:400;transition:color .18s,padding-left .2s;display:inline-block}
+.ft-col a:hover{color:var(--gold-l);padding-left:5px}
+.ft-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:13px}
+.ft-ico{color:var(--gold);font-size:10px;flex-shrink:0;margin-top:2px;font-style:normal}
+.ft-txt{color:rgba(238,243,239,0.32);font-size:13px;line-height:1.65}
+.ft-txt a{color:inherit;transition:color .18s}
+.ft-txt a:hover{color:var(--gold-l)}
+.ft-comp{border-top:1px solid rgba(201,168,76,0.07);border-bottom:1px solid rgba(201,168,76,0.07);padding:20px 0;margin-bottom:26px}
+.ft-comp p{font-size:10.5px;color:rgba(238,243,239,0.18);line-height:1.75;margin-bottom:8px;font-weight:300}
+.ft-comp p:last-child{margin-bottom:0}
+.ft-comp a{color:rgba(238,243,239,0.28);text-decoration:underline}
+.ft-comp a:hover{color:var(--gold)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.ft-copy{font-size:11px;color:rgba(238,243,239,0.16);font-weight:300}
+.ft-legal{display:flex;gap:24px}
+.ft-legal a{font-size:11px;color:rgba(238,243,239,0.16);transition:color .18s}
+.ft-legal a:hover{color:var(--gold)}
+
+/* Back to top */
+#btt{position:fixed;bottom:30px;right:30px;z-index:500;width:46px;height:46px;border-radius:50%;background:var(--forest-m);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:17px;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s cubic-bezier(0.16,1,0.3,1),background .2s;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+#btt.vis{opacity:1;pointer-events:all;transform:none}
+#btt:hover{background:var(--forest-l);border-color:var(--gold);transform:translateY(-3px)}
+
+/* ===========================================
+   SCROLL REVEALS (below fold only)
+=========================================== */
+.r{opacity:0;transform:translateY(26px);transition:opacity .95s cubic-bezier(0.16,1,0.3,1),transform .95s cubic-bezier(0.16,1,0.3,1)}
+.r.rl{transform:translateX(-20px)}
+.r.rr{transform:translateX(20px)}
+.r.visible{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.17s}.d3{transition-delay:.27s}.d4{transition-delay:.38s}.d5{transition-delay:.50s}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+@media(max-width:1200px){
+  .hero-inner{grid-template-columns:1fr;max-width:680px}
+  .hero-crest{display:none}
+  .hcard{padding:36px 32px}
+  .divs-head{grid-template-columns:1fr}
+  .div-grid{grid-template-columns:repeat(2,1fr)}
+  .finalcta-inner{grid-template-columns:1fr;text-align:center;gap:48px}
+  .finalcta-left .section-body{margin:0 auto 0}
+  .finalcta-right{min-width:unset}
+  .ft-top{grid-template-columns:1fr 1fr 1fr;gap:36px}
+  .ft-brand{grid-column:1/-1}
+}
+@media(max-width:900px){
+  .nav-links,.nav-tel{display:none}
+  .ham{display:flex}
+  :root{--pad:clamp(20px,6vw,44px)}
+  .who-inner,.indep-inner{grid-template-columns:1fr;gap:48px}
+  .who-img-frame{height:340px}
+  .who-stat-badge{display:none}
+  .proof-grid{grid-template-columns:1fr}
+  .proof-item:nth-child(odd){border-right:none}
+  .compare-wrap{grid-template-columns:1fr}
+  .stats-wrap{flex-wrap:wrap}
+  .stat-item{flex:0 0 50%;border-bottom:1px solid rgba(0,0,0,0.08)}
+  footer{padding:60px var(--pad) 36px}
+  .ft-top{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(max-width:640px){
+  .div-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .stat-item{flex:0 0 100%}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bot{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body id="top">
+
+<div id="pb" aria-hidden="true"></div>
+<div id="cd" aria-hidden="true"></div>
+<div id="cr" aria-hidden="true"></div>
+<a href="#top" id="btt" aria-label="Back to top">&#8593;</a>
+
+<!-- MOBILE NAV -->
+<div id="mnav" class="mnav" role="dialog" aria-label="Navigation" aria-modal="true">
+  <a href="index.html"  class="ml">Home</a>
+  <a href="about.html"  class="ml">About</a>
+  <div class="mrule"></div>
+  <a href="https://barkmanmedicare.com"     class="ml" target="_blank" rel="noopener">Medicare</a>
+  <a href="https://barkmanfinalexpense.com" class="ml" target="_blank" rel="noopener">Final Expense</a>
+  <a href="https://barkmanannuities.com"    class="ml" target="_blank" rel="noopener">Annuities</a>
+  <a href="https://barkmancommercial.com"   class="ml" target="_blank" rel="noopener">Commercial</a>
+  <a href="https://barkmanbenefits.com"     class="ml" target="_blank" rel="noopener">Benefits</a>
+  <div class="mrule"></div>
+  <a href="careers.html" class="ml">Careers</a>
+  <a href="contact.html" class="ml">Contact</a>
+  <div class="mrule"></div>
+  <a href="tel:6026800058" class="mtel">602&#8209;680&#8209;0058</a>
+  <div class="mcta">
+    <a href="contact.html" class="btn btn-g">Get a Free Consultation <span class="ba">&#8594;</span></a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <div id="nav-bg"></div>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo" aria-label="Barkman Financial Group">
+      <img src="img/logo.png" alt="BFG" width="44" height="44" loading="eager">
+      <div class="logo-t">
+        <span class="ln">BARKMAN</span>
+        <span class="ls">Financial Group</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"  class="nl on">Home</a></li>
+      <li><a href="about.html"  class="nl">About</a></li>
+      <li>
+        <button class="nl-btn" id="dd-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">
+          Divisions <span class="chev">&#8250;</span>
+        </button>
+        <ul class="dd" id="dd-menu" role="menu">
+          <li><a href="https://barkmanmedicare.com"     role="menuitem" target="_blank" rel="noopener">Barkman Medicare</a></li>
+          <li><a href="https://barkmanfinalexpense.com" role="menuitem" target="_blank" rel="noopener">Barkman Final Expense</a></li>
+          <li><a href="https://barkmanannuities.com"    role="menuitem" target="_blank" rel="noopener">Barkman Annuities</a></li>
+          <li><a href="https://barkmancommercial.com"   role="menuitem" target="_blank" rel="noopener">Barkman Commercial &amp; Cyber</a></li>
+          <li><a href="https://barkmanbenefits.com"     role="menuitem" target="_blank" rel="noopener">Barkman Benefits</a></li>
+        </ul>
+      </li>
+      <li><a href="careers.html" class="nl">Careers</a></li>
+      <li><a href="contact.html" class="nl">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="tel:6026800058" class="nav-tel">602&#8209;680&#8209;0058</a>
+      <a href="contact.html" class="nav-cta">Get Covered</a>
+      <button class="ham" id="ham" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-line" aria-hidden="true"></div>
+  <div class="hero-crest" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <!-- Left — CSS animated, always visible -->
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span></span>Independent Insurance Holding Company &nbsp;&middot;&nbsp; Phoenix, Arizona</div>
+      <h1 class="hero-h1">
+        When coverage matters,<br>
+        <em>it has to be right.</em>
+      </h1>
+      <span class="hero-rule"></span>
+      <p class="hero-body">Barkman Financial Group is the parent company of five specialized insurance divisions. We answer to the families, businesses, and individuals we serve &mdash; across every coverage need, in more than twenty states.</p>
+      <div class="hero-indep">
+        <span class="check">&#10003;</span>
+        Independent agency &mdash; we compare across our carrier network, not for it
+      </div>
+      <div class="hero-trust">
+        <span>&#10003;&nbsp; No fees &mdash; ever</span>
+        <span>&#10003;&nbsp; Licensed advisors</span>
+        <span>&#10003;&nbsp; No pressure</span>
+        <span>&#10003;&nbsp; Zero cost to you</span>
+      </div>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-g">Get a Free Consultation <span class="ba">&#8594;</span></a>
+        <a href="about.html"   class="btn btn-o">Our Story</a>
+      </div>
+    </div>
+
+    <!-- Right card — CSS animated, always visible -->
+    <div class="hcard">
+      <div class="hcard-top"></div>
+      <div class="hcard-lbl">Speak With an Advisor</div>
+      <a href="tel:6026800058" class="hcard-tel">602&#8209;680&#8209;0058</a>
+      <div class="hcard-hrs">Mon&ndash;Fri 8am&ndash;6pm &nbsp;&middot;&nbsp; Sat 9am&ndash;2pm CST</div>
+      <div class="hcard-sep"></div>
+      <a href="contact.html" class="btn btn-g hcard-btn">Get a Free Consultation <span class="ba">&#8594;</span></a>
+      <div class="hcard-trust">
+        <span>&#10003; No fees</span>
+        <span>&#10003; Confidential</span>
+        <span>&#10003; No obligation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-ind" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span class="scroll-lbl">Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats">
+  <div class="stats-wrap">
+    <div class="stat-item r">
+      <span class="stat-n" data-count="500" data-sfx="+">500+</span>
+      <span class="stat-l">Families Protected</span>
+    </div>
+    <div class="stat-item r d1">
+      <span class="stat-n" data-count="20" data-sfx="+">20+</span>
+      <span class="stat-l">States Licensed</span>
+    </div>
+    <div class="stat-item r d2">
+      <span class="stat-n">5</span>
+      <span class="stat-l">Specialized Divisions</span>
+    </div>
+    <div class="stat-item r d3">
+      <span class="stat-n">$0</span>
+      <span class="stat-l">Cost to Work With Us</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ WHO WE ARE ═══ -->
+<section class="who">
+  <div class="who-inner">
+    <div class="who-body">
+      <div class="eyebrow r">Who We Are</div>
+      <h2 class="section-title r d1" style="margin-top:16px">
+        An independent holding company<br><em>built on one principle.</em>
+      </h2>
+      <span class="gold-bar r d2"></span>
+      <p class="section-body r d2">
+        Barkman Financial Group is the parent company of five specialized insurance divisions. We are not a captive agency. We are not tied to any carrier, quota, or product line. Every recommendation we make is based solely on what is right for the client in front of us.
+      </p>
+      <p class="section-body r d3" style="margin-top:18px">
+        We were built by people who have sat with families in their hardest moments &mdash; and understood that this work is not about closing policies. It is about protecting people. That is the standard every division in this organization is held to, without exception.
+      </p>
+      <div class="pillars r d3">
+        <div class="pillar"><span class="p-dot">&#9670;</span><div><strong>Integrity above commission.</strong> If a policy is not right for a client, we do not sell it. We have walked away from commission to protect clients. That is not a line &mdash; it is how we operate.</div></div>
+        <div class="pillar"><span class="p-dot">&#9670;</span><div><strong>Independent by design.</strong> We compare options across our entire carrier network and recommend what genuinely fits &mdash; not what pays us the most.</div></div>
+        <div class="pillar"><span class="p-dot">&#9670;</span><div><strong>Long-term relationships.</strong> Our commitment to every client continues long after enrollment. Annual reviews, claim questions, coverage changes &mdash; we are still there.</div></div>
+      </div>
+      <div class="who-cta r d4">
+        <a href="about.html" class="btn btn-o" style="border-color:rgba(11,55,40,0.3);color:var(--tx-dk)">Read Our Story <span class="ba">&#8594;</span></a>
+      </div>
+    </div>
+
+    <div class="who-visual r rr">
+      <div class="who-img-frame">
+        <img
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=85&fit=crop&crop=faces"
+          alt="Barkman Financial Group"
+          loading="lazy"
+          width="900"
+          height="560"
+        >
+      </div>
+      <div class="who-stat-badge">
+        <span class="wsb-n" data-count="20" data-sfx="+">20+</span>
+        <span class="wsb-l">States<br>Licensed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISIONS ═══ -->
+<section class="divs" id="divisions">
+  <div class="divs-inner">
+    <div class="divs-head">
+      <div>
+        <div class="eyebrow r">Our Divisions</div>
+        <h2 class="section-title r d1">
+          Five companies.<br><em>One standard.</em>
+        </h2>
+      </div>
+      <p class="divs-intro r d2">
+        Each division operates with focused expertise, dedicated advisors, and its own client-facing website. All five report to the same non-negotiable standard of care established by Barkman Financial Group.
+      </p>
+    </div>
+
+    <div class="div-grid">
+      <a href="https://barkmanmedicare.com" class="div-card r" target="_blank" rel="noopener">
+        <div class="div-n">01</div>
+        <div class="div-name">Barkman Medicare</div>
+        <p class="div-desc">Dedicated Medicare advisors who verify your doctors, check prescriptions against plan formularies, and enroll you in the plan that genuinely fits &mdash; Supplement, Advantage, or Part D. Independent from every carrier.</p>
+        <div class="div-more">Visit Division <span>&#8594;</span></div>
+      </a>
+      <a href="https://barkmanfinalexpense.com" class="div-card r d1" target="_blank" rel="noopener">
+        <div class="div-n">02</div>
+        <div class="div-name">Barkman Final Expense</div>
+        <p class="div-desc">Whole life coverage designed to protect families from end-of-life costs. No medical exam. Rates locked for life. Death benefit paid tax-free, directly to beneficiaries, within days of a certified claim.</p>
+        <div class="div-more">Visit Division <span>&#8594;</span></div>
+      </a>
+      <a href="https://barkmanannuities.com" class="div-card r d2" target="_blank" rel="noopener">
+        <div class="div-n">03</div>
+        <div class="div-name">Barkman Annuities</div>
+        <p class="div-desc">Guaranteed retirement income structured around each client&rsquo;s timeline, risk tolerance, and income goals. Fixed, fixed indexed, and variable options. We solve the one retirement risk most people forget: outliving their savings.</p>
+        <div class="div-more">Visit Division <span>&#8594;</span></div>
+      </a>
+      <a href="https://barkmancommercial.com" class="div-card r d3" target="_blank" rel="noopener">
+        <div class="div-n">04</div>
+        <div class="div-name">Barkman Commercial &amp; Cyber</div>
+        <p class="div-desc">Commercial property, general liability, professional liability, workers&rsquo; compensation, and cyber liability for businesses at every stage. Independent placement across commercial carriers for the right fit at the right cost.</p>
+        <div class="div-more">Visit Division <span>&#8594;</span></div>
+      </a>
+      <a href="https://barkmanbenefits.com" class="div-card r d4" target="_blank" rel="noopener">
+        <div class="div-n">05</div>
+        <div class="div-name">Barkman Benefits</div>
+        <p class="div-desc">Group health, dental, vision, life, and disability benefits for employers of every size. We design packages that attract and retain talent &mdash; without overpaying for coverage employees don&rsquo;t need or understand.</p>
+        <div class="div-more">Visit Division <span>&#8594;</span></div>
+      </a>
+      <div class="div-quote-card r d5">
+        <div class="div-qinner">
+          <span class="div-qmark">&ldquo;</span>
+          <p class="div-qtext">We don&rsquo;t train salespeople.<br>We train professionals<br>who happen to close.</p>
+          <div class="div-qsrc">Barkman Financial Group</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROOF ═══ -->
+<section class="proof">
+  <div class="proof-inner">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="eyebrow r" style="justify-content:center">Why It Matters</div>
+      <h2 class="section-title lt r d1" style="margin-top:16px">The standard we hold<br><em>every advisor to.</em></h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-item r">
+        <div class="pi-icon">01</div>
+        <div class="pi-title">Integrity Above Commission</div>
+        <p class="pi-body">If a policy is not right for a client, we do not sell it. Period. We have walked away from commission to protect people from plans that did not serve them. This is not a value we market. It is a standard we enforce.</p>
+      </div>
+      <div class="proof-item r d1">
+        <div class="pi-icon">02</div>
+        <div class="pi-title">Independent Placement</div>
+        <p class="pi-body">We are not captive to any carrier. We compare options across our carrier network and recommend what genuinely fits &mdash; even if it is the simplest, least expensive option available. Our incentive is entirely aligned with yours.</p>
+      </div>
+      <div class="proof-item r d2">
+        <div class="pi-icon">03</div>
+        <div class="pi-title">We Actually Listen</div>
+        <p class="pi-body">Before we mention a single product, we understand the client &mdash; their family, their finances, their goals. The people we serve are not policy numbers. Every advisor in this organization is trained to serve, not sell.</p>
+      </div>
+      <div class="proof-item r d3">
+        <div class="pi-icon">04</div>
+        <div class="pi-title">We Stay in Your Corner</div>
+        <p class="pi-body">Annual coverage reviews. Claim questions answered. Coverage adjusted as life changes. Our relationship with every client continues long after the policy is placed. That is what separates a professional from a salesperson.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INDEPENDENT ═══ -->
+<section class="indep">
+  <div class="indep-inner">
+    <div>
+      <div class="eyebrow r">Why Independence Matters</div>
+      <h2 class="section-title r d1" style="margin-top:16px">We work for you.<br><em>Not the insurance company.</em></h2>
+      <span class="gold-bar r d2"></span>
+      <p class="section-body r d2">When you call a captive agent, you hear about one company&rsquo;s products at one company&rsquo;s prices. When you work with Barkman Financial Group, we compare options across our entire carrier network and recommend what is genuinely right for your situation.</p>
+      <p class="section-body r d3" style="margin-top:18px">Our compensation is identical regardless of which carrier we place you with. We have no incentive to recommend anything other than what is best for you. That is what independence means.</p>
+      <div style="margin-top:36px" class="r d4">
+        <a href="contact.html" class="btn btn-g">Start a Conversation <span class="ba">&#8594;</span></a>
+      </div>
+    </div>
+    <div class="compare-wrap r rr d2">
+      <div class="compare-col">
+        <div class="cc-head" style="color:var(--tx-mt)">Captive Agent</div>
+        <div class="cc-row">One carrier&rsquo;s products only</div>
+        <div class="cc-row">Quota-driven recommendations</div>
+        <div class="cc-row">No carrier comparison possible</div>
+        <div class="cc-row">Single underwriting standard</div>
+        <div class="cc-row">Incentive tied to carrier, not client</div>
+      </div>
+      <div class="compare-col active">
+        <div class="cc-head">Barkman Financial Group</div>
+        <div class="cc-row yes">Multiple carriers compared</div>
+        <div class="cc-row yes">Client-first, every time</div>
+        <div class="cc-row yes">Best fit from our full network</div>
+        <div class="cc-row yes">Broadest underwriting access</div>
+        <div class="cc-row yes">Incentive 100% aligned with client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CARRIERS ═══ -->
+<div class="divider"></div>
+<section class="carriers">
+  <div class="carriers-inner">
+    <div class="carriers-lbl r">Our trusted carrier partners</div>
+    <div class="carriers-row r d1">
+      <span>Mutual of Omaha</span>
+      <span class="cdot">&#9670;</span>
+      <span>Transamerica</span>
+      <span class="cdot">&#9670;</span>
+      <span>Aetna</span>
+      <span class="cdot">&#9670;</span>
+      <span>American Amicable</span>
+      <span class="cdot">&#9670;</span>
+      <span>AIG &nbsp;/&nbsp; Corebridge</span>
+      <span class="cdot">&#9670;</span>
+      <span>Gerber Life</span>
+      <span class="cdot">&#9670;</span>
+      <span>And more</span>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="finalcta">
+  <div class="finalcta-bg" aria-hidden="true"></div>
+  <div class="finalcta-inner">
+    <div class="finalcta-left">
+      <div class="eyebrow r" style="color:var(--gold)">Start Here</div>
+      <h2 class="section-title lt r d1">
+        Real guidance.<br><em>No cost. No pressure.</em>
+      </h2>
+      <p class="section-body lt r d2" style="margin-top:16px;max-width:460px">
+        Twenty minutes is all it takes to understand your options and know exactly where you stand. Zero obligation to do anything after.
+      </p>
+    </div>
+    <div class="finalcta-right r rr d2">
+      <a href="tel:6026800058" class="cta-tel">602&#8209;680&#8209;0058</a>
+      <span class="cta-hrs">Call or text &mdash; we answer</span>
+      <a href="contact.html" class="btn btn-g cta-btn">Get a Free Consultation <span class="ba">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="divider"></div>
+<footer>
+  <div class="ft">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <div class="ft-logo-wrap">
+          <img src="img/logo.png" alt="Barkman Financial Group" width="44" height="44" loading="lazy">
+          <div class="logo-t">
+            <span class="ln">BARKMAN</span>
+            <span class="ls">Financial Group</span>
+          </div>
+        </div>
+        <p class="ft-tag">
+          <strong>When coverage matters, it has to be right.</strong>
+          Parent company of five specialized insurance divisions. Independent. Licensed in 20+ states. Based in Phoenix, Arizona.
+        </p>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Company</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Divisions</div>
+        <ul>
+          <li><a href="https://barkmanmedicare.com"     target="_blank" rel="noopener">Barkman Medicare</a></li>
+          <li><a href="https://barkmanfinalexpense.com" target="_blank" rel="noopener">Barkman Final Expense</a></li>
+          <li><a href="https://barkmanannuities.com"    target="_blank" rel="noopener">Barkman Annuities</a></li>
+          <li><a href="https://barkmancommercial.com"   target="_blank" rel="noopener">Barkman Commercial</a></li>
+          <li><a href="https://barkmanbenefits.com"     target="_blank" rel="noopener">Barkman Benefits</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Legal</div>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <div class="ft-col-h">Contact</div>
+        <div class="ft-row"><i class="ft-ico">&#9742;</i><span class="ft-txt"><a href="tel:6026800058">602&#8209;680&#8209;0058</a></span></div>
+        <div class="ft-row"><i class="ft-ico">&#9679;</i><span class="ft-txt">Phoenix, Arizona &nbsp;&middot;&nbsp; 20+ states</span></div>
+        <div class="ft-row"><i class="ft-ico">&#9679;</i><span class="ft-txt">Mon&ndash;Fri 8am&ndash;6pm CST<br>Sat 9am&ndash;2pm CST</span></div>
+        <div class="ft-row"><i class="ft-ico">&#9679;</i><span class="ft-txt">Independent. No cost to you.</span></div>
+      </div>
+    </div>
+    <div class="ft-comp">
+      <p>We do not offer every plan available in your area. Currently we represent a number of organizations which offer a number of products in your area. Please contact <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a>, 1&#8209;800&#8209;MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+      <p>Barkman Financial Group and its affiliated companies are independent insurance agencies not affiliated with, connected to, or endorsed by the U.S. government, the Centers for Medicare &amp; Medicaid Services (CMS), or any government agency. Insurance products, availability, and eligibility vary by state. Not all applicants will qualify. Rates shown are for illustrative purposes only.</p>
+    </div>
+    <div class="ft-bot">
+      <p class="ft-copy">&copy; 2026 Barkman Financial Group. All rights reserved. AZ License #22121594.</p>
+      <div class="ft-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Progress */
+  var pb=document.getElementById('pb');
+  window.addEventListener('scroll',function(){
+    var d=document.documentElement;
+    if(pb)pb.style.width=Math.min(d.scrollTop/(d.scrollHeight-d.clientHeight)*100,100)+'%';
+  },{passive:true});
+
+  /* Cursor */
+  var cd=document.getElementById('cd'),cr=document.getElementById('cr');
+  if(cd&&cr&&!window.matchMedia('(hover:none),(pointer:coarse)').matches){
+    var mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+    document.addEventListener('mousedown',function(){cr.classList.add('p')});
+    document.addEventListener('mouseup',function(){cr.classList.remove('p')});
+    document.querySelectorAll('a,button,.div-card').forEach(function(el){
+      el.addEventListener('mouseenter',function(){cr.classList.add('h')});
+      el.addEventListener('mouseleave',function(){cr.classList.remove('h')});
+    });
+    (function loop(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+  }
+
+  /* Nav solid on scroll */
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('solid',window.scrollY>60)},{passive:true});
+
+  /* Dropdown - click only, never auto-opens */
+  var ddBtn=document.getElementById('dd-btn'),ddMenu=document.getElementById('dd-menu');
+  if(ddBtn&&ddMenu){
+    function cDD(){ddMenu.classList.remove('open');ddBtn.setAttribute('aria-expanded','false')}
+    function oDD(){ddMenu.classList.add('open');ddBtn.setAttribute('aria-expanded','true')}
+    ddBtn.addEventListener('click',function(e){e.stopPropagation();ddMenu.classList.contains('open')?cDD():oDD()});
+    ddMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cDD)});
+    document.addEventListener('click',function(e){if(!ddBtn.contains(e.target)&&!ddMenu.contains(e.target))cDD()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')cDD()});
+    window.addEventListener('scroll',cDD,{passive:true});
+  }
+
+  /* Mobile nav */
+  var ham=document.getElementById('ham'),mn=document.getElementById('mnav');
+  if(ham&&mn){
+    function cMN(){ham.classList.remove('open');mn.classList.remove('open');document.body.style.overflow=''}
+    function oMN(){ham.classList.add('open');mn.classList.add('open');document.body.style.overflow='hidden'}
+    ham.addEventListener('click',function(){ham.classList.contains('open')?cMN():oMN()});
+    mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cMN)});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')cMN()});
+  }
+
+  /* Back to top */
+  var btt=document.getElementById('btt');
+  if(btt){
+    window.addEventListener('scroll',function(){btt.classList.toggle('vis',window.scrollY>700)},{passive:true});
+    btt.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+  }
+
+  /* Scroll reveals — below fold only */
+  if(window.IntersectionObserver){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+    },{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
+    document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
+  } else {
+    document.querySelectorAll('.r').forEach(function(el){el.classList.add('visible')});
+  }
+
+  /* Counters */
+  function cUp(el){
+    var target=parseFloat(el.dataset.count),sfx=el.dataset.sfx||'',dur=2000,t0=performance.now();
+    (function fr(t){var p=Math.min((t-t0)/dur,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(target*ease).toLocaleString()+sfx;if(p<1)requestAnimationFrame(fr)})(performance.now());
+  }
+  if(window.IntersectionObserver){
+    var co=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){cUp(e.target);co.unobserve(e.target)}})},{threshold:0.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el)});
+  }
+
+  /* Parallax hero photo — subtle */
+  var hph=document.querySelector('.hero-photo');
+  if(hph&&!window.matchMedia('(hover:none),(pointer:coarse)').matches){
+    window.addEventListener('scroll',function(){
+      if(window.scrollY<window.innerHeight*1.5)hph.style.transform='scale(1.05) translateY('+window.scrollY*.08+'px)';
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
